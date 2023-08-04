@@ -1,0 +1,7 @@
+*.exe
+*.exe.recipe
+.vs
+*.tlog
+*.lastbuildstate
+*.log
+Debug
