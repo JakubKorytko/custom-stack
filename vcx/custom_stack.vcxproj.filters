@@ -74,5 +74,8 @@
     <ClCompile Include="..\main.c">
       <Filter>Entry point</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\stack\my_stack_read.c">
+      <Filter>Stack</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

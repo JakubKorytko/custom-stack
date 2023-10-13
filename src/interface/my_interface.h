@@ -19,15 +19,6 @@ enum MY_INTERFACE_ENUM {
 
 void menu();
 void stdin_clear();
-void SetFunctionPointers(enum MY_DATA_TYPE typ, PrintObject* pfunprint,
-	FreeObject* pfunfree,
-	Push* ptr_fun_push,
-	IO_Object* pfunsave,
-	IO_Object* pfunread,
-	CompData* ptr_fun_comp,
-	SearchData* fun_search_data,
-	FreeSearchData* fun_free_search_data,
-	GetObjectTyp* pfungettyp);
 
 // Internal functions, there is no need to declare them in the header file
 

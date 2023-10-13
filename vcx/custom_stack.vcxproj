@@ -39,6 +39,7 @@
     <ClCompile Include="..\src\stack\my_stack.c">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="..\src\stack\my_stack_read.c" />
     <ClCompile Include="..\src\student\my_student.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

@@ -28,7 +28,18 @@ typedef void (*GetFuncPtr)(
 	SearchData*  fun_search_data,
 	FreeSearchData* fun_free_search_data,
 	GetObjectTyp* pfungettyp
-	);
+);
+
+void SetFunctionPointers(enum MY_DATA_TYPE typ, PrintObject* pfunprint,
+	FreeObject* pfunfree,
+	Push* ptr_fun_push,
+	IO_Object* pfunsave,
+	IO_Object* pfunread,
+	CompData* ptr_fun_comp,
+	SearchData* fun_search_data,
+	FreeSearchData* fun_free_search_data,
+	GetObjectTyp* pfungettyp
+);
 
 struct MY_STACK {
 	void* pData;
@@ -55,5 +66,11 @@ void* MY_STACK_Search(void* pSearchDat, CompData ptr_comp_fun, int FirstEntry);
 void MY_STACK_SetFuncPointers(GetFuncPtr ptr);
 void MY_STACK_Save();
 void MY_STACK_Read();
+
+// the size of reserved memory for records when writing and reading to/from a file
+#define rec_type __int64
+#define rec_size sizeof(rec_type)
+
+extern const char STACK_DATA_FILENAME[];
 
 #endif // MY_STACK__H
