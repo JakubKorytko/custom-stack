@@ -19,9 +19,19 @@ enum ErrorCode {
 	ERROR__TOTAL // MARKS THE END OF AN ENUM, ALWAYS AT THE END
 };
 
+struct ExecResult {
+	short errorCode;
+	char* file;
+	unsigned int line;
+};
+
 typedef enum ErrorCode Error;
 
 void handle_error(Error error, const char* file, unsigned int line);
+
+struct ExecResult error(short errorCode, char* file, unsigned int line);
+
+struct ExecResult success();
 
 void setInvalidParameterHandler();
 

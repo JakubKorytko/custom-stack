@@ -66,3 +66,23 @@ void setInvalidParameterHandler() {
 	// Disable the message box for assertions.
 	_CrtSetReportMode(_CRT_ASSERT, 0);
 }
+
+struct ExecResult error(short errorCode, char* file, unsigned int line) {
+	struct ExecResult res = {
+		.errorCode = errorCode,
+		.line = line,
+		.file = file
+	};
+
+	return res;
+}
+
+struct ExecResult success() {
+	struct ExecResult res = {
+	.errorCode = -1,
+	.line = 0,
+	.file = NULL
+	};
+
+	return res;
+}
