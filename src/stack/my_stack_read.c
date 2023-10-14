@@ -75,12 +75,7 @@ static struct ExecResult MY_STACK_Read__Prepare_tmp_stack_element(
         return result;
     }
 
-    SetFunctionPointers(*type, &(*tmp)->ptr_fun_prnt,
-        &(*tmp)->ptr_fun_free, &(*tmp)->ptr_fun_push,
-        &(*tmp)->ptr_fun_save, &(*tmp)->ptr_fun_read,
-        &(*tmp)->ptr_fun_comp, &(*tmp)->fun_search_data,
-        &(*tmp)->fun_free_search_data,
-        &(*tmp)->ptr_fun_get_type);
+    SetFunctionPointers(*tmp, *type);
 
     return success();
 }

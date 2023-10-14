@@ -37,6 +37,7 @@
     <ClCompile Include="..\src\pch_source\stdafx.c">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="..\src\stack\data_types.c" />
     <ClCompile Include="..\src\stack\function_pointers.c" />
     <ClCompile Include="..\src\stack\my_stack.c" />
     <ClCompile Include="..\src\stack\my_stack_read.c" />

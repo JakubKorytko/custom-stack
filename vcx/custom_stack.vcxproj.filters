@@ -98,5 +98,8 @@
     <ClCompile Include="..\src\stack\my_stack.c">
       <Filter>Stack\Main</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\stack\data_types.c">
+      <Filter>Stack\Data types</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -26,12 +26,7 @@ static void push(enum MY_DATA_TYPE type) {
         return;
     }
 
-    SetFunctionPointers(type, &tmp->ptr_fun_prnt,
-        &tmp->ptr_fun_free, &tmp->ptr_fun_push,
-        &tmp->ptr_fun_save, &tmp->ptr_fun_read,
-        &tmp->ptr_fun_comp, &tmp->fun_search_data,
-        &tmp->fun_free_search_data,
-        &tmp->ptr_fun_get_type);
+    SetFunctionPointers(tmp, type);
 
     tmp->typ = type;
 
@@ -67,12 +62,7 @@ static void find(enum MY_DATA_TYPE type) {
         return;
     }
 
-    SetFunctionPointers(type, &tmp->ptr_fun_prnt,
-        &tmp->ptr_fun_free, &tmp->ptr_fun_push,
-        &tmp->ptr_fun_save, &tmp->ptr_fun_read,
-        &tmp->ptr_fun_comp, &tmp->fun_search_data,
-        &tmp->fun_free_search_data,
-        &tmp->ptr_fun_get_type);
+    SetFunctionPointers(tmp, type);
 
     if (!*tmp->fun_free_search_data) {
         if (tmp) {

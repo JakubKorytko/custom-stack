@@ -3,6 +3,8 @@
 #ifndef SRC_STACK_FUNCTION_POINTERS_H_
 #define SRC_STACK_FUNCTION_POINTERS_H_
 
+#include <stdio.h>
+
 // Type definition: pointer to
 // a function with a prototype int Function(void *, void *);
 typedef int (*CompData)(void* pcurData, void* pSearchData);
@@ -48,15 +50,6 @@ typedef void (*GetFuncPtr)(
     GetObjectTyp* pfungettyp
 );
 
-void SetFunctionPointers(enum MY_DATA_TYPE typ, PrintObject* pfunprint,
-    FreeObject* pfunfree,
-    Push* ptr_fun_push,
-    IO_Object* pfunsave,
-    IO_Object* pfunread,
-    CompData* ptr_fun_comp,
-    SearchData* fun_search_data,
-    FreeSearchData* fun_free_search_data,
-    GetObjectTyp* pfungettyp
-);
+void SetFunctionPointers(struct MY_STACK* element, enum MY_DATA_TYPE type);
 
 #endif  // SRC_STACK_FUNCTION_POINTERS_H_
