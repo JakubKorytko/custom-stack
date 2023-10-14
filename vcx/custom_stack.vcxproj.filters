@@ -16,54 +16,69 @@
     <Filter Include="Interface\Errors handler">
       <UniqueIdentifier>{93d0c1fa-f7a6-4bff-9ae2-c413162a5abe}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Interface\My messages">
-      <UniqueIdentifier>{2964d29b-649f-42e5-ac7f-54a9958dad68}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Interface\My interface">
-      <UniqueIdentifier>{d0f4031b-4780-4623-ae92-ef762959e777}</UniqueIdentifier>
-    </Filter>
     <Filter Include="PCH Source\Stdafx">
       <UniqueIdentifier>{26a2b4f7-6584-4080-bac6-5a8d914ed13f}</UniqueIdentifier>
     </Filter>
     <Filter Include="Entry point">
       <UniqueIdentifier>{844ccba1-3be0-4368-af2c-f93e40e62ce3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Stack\Save &amp; Read">
+      <UniqueIdentifier>{61e7399d-8fc2-4390-8d47-836569101127}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stack\Data types">
+      <UniqueIdentifier>{cda2e7a9-0c7c-4498-88cc-39e0aaf31223}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stack\Main">
+      <UniqueIdentifier>{1b4d61f5-62ba-4666-93da-5ad2c11a12f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Main">
+      <UniqueIdentifier>{d0f4031b-4780-4623-ae92-ef762959e777}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Messages">
+      <UniqueIdentifier>{2964d29b-649f-42e5-ac7f-54a9958dad68}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\student\my_student.h">
-      <Filter>Student</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\stack\my_stack.h">
-      <Filter>Stack</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\pch_source\targetver.h">
-      <Filter>PCH Source</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\interface\errors_handler.h">
       <Filter>Interface\Errors handler</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\interface\my_messages.h">
-      <Filter>Interface\My messages</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\interface\my_interface.h">
-      <Filter>Interface\My interface</Filter>
+      <Filter>Interface\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\interface\my_messages.h">
+      <Filter>Interface\Messages</Filter>
     </ClInclude>
     <ClInclude Include="..\src\pch_source\stdafx.h">
       <Filter>PCH Source\Stdafx</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\pch_source\targetver.h">
+      <Filter>PCH Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\student\my_student.h">
+      <Filter>Student</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\stack\function_pointers.h">
+      <Filter>Stack\Data types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\stack\data_types.h">
+      <Filter>Stack\Data types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\stack\my_stack.h">
+      <Filter>Stack\Main</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\main.c">
+      <Filter>Entry point</Filter>
+    </ClCompile>
     <ClCompile Include="..\src\interface\errors_handler.c">
       <Filter>Interface\Errors handler</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\interface\my_messages.c">
-      <Filter>Interface\My messages</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\interface\my_interface.c">
-      <Filter>Interface\My interface</Filter>
+      <Filter>Interface\Main</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\stack\my_stack.c">
-      <Filter>Stack</Filter>
+    <ClCompile Include="..\src\interface\my_messages.c">
+      <Filter>Interface\Messages</Filter>
     </ClCompile>
     <ClCompile Include="..\src\pch_source\stdafx.c">
       <Filter>PCH Source\Stdafx</Filter>
@@ -71,11 +86,17 @@
     <ClCompile Include="..\src\student\my_student.c">
       <Filter>Student</Filter>
     </ClCompile>
-    <ClCompile Include="..\main.c">
-      <Filter>Entry point</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\stack\my_stack_read.c">
-      <Filter>Stack</Filter>
+      <Filter>Stack\Save &amp; Read</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\stack\my_stack_save.c">
+      <Filter>Stack\Save &amp; Read</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\stack\function_pointers.c">
+      <Filter>Stack\Data types</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\stack\my_stack.c">
+      <Filter>Stack\Main</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -20,26 +20,4 @@ enum MY_INTERFACE_ENUM {
 void menu();
 void stdin_clear();
 
-// Internal functions, there is no need to declare them in the header file
-
-/*
-
-static void push(MY_DATA_TYPE type);
-
-static void clear();
-
-static void pop();
-
-static void display();
-
-static void displayTop();
-
-static void find(MY_DATA_TYPE type);
-
-static void save();
-
-static void read();
-
-*/
-
 #endif // MY_INTERFACE__H

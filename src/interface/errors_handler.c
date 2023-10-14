@@ -31,14 +31,9 @@ static void display_error(Error error, const char* file, unsigned int line)
 void handle_error(Error error, const char* file, unsigned int line)
 {
 	display_error(error, file, line);
-	const char* message = error_messages[error];
 
-	switch (error) {
-		case ERROR__MEMORY_ALLOCATION:
-			MY_STACK_Free();
-			break;
-		default:
-			break;
+	if (error == ERROR__MEMORY_ALLOCATION) {
+		MY_STACK_Free();
 	}
 
 	system("pause");
@@ -48,23 +43,24 @@ void handle_error(Error error, const char* file, unsigned int line)
 static void myInvalidParameterHandler(const wchar_t* expression,
 	const wchar_t* function,
 	const wchar_t* file,
-	unsigned int line,
-	uintptr_t pReserved)
+	unsigned int line)
 {
 	wprintf(L"Invalid parameter detected in function %s."
 		L" File: %s Line: %d\n", function, file, line);
 	wprintf(L"Expression: %s\n\n", expression);
 
 	// Handle the invalid parameter error
-	handle_error(ERROR__INVALID_PARAMETER, (char*)file, line);
+	handle_error(ERROR__INVALID_PARAMETER, (const char*)file, line);
 }
 
-void setInvalidParameterHandler() {
+_invalid_parameter_handler setInvalidParameterHandler() {
 	//Set terminate handler
-	_invalid_parameter_handler old_param_hadler = _set_invalid_parameter_handler(myInvalidParameterHandler);
+	_invalid_parameter_handler old_param_hadler = _set_invalid_parameter_handler(&myInvalidParameterHandler);
 
 	// Disable the message box for assertions.
 	_CrtSetReportMode(_CRT_ASSERT, 0);
+
+	return old_param_hadler;
 }
 
 struct ExecResult error(short errorCode, char* file, unsigned int line) {

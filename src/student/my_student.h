@@ -25,23 +25,11 @@ void MY_STUDENT_Free(void* ptr);
 void* MY_STUDENT_Push();
 void MY_STUDENT_Print(void* ptr);
 int MY_STUDENT_Compare(void* pCurData, void* pSearchData);
-int MY_STUDENT_Save(void** pdat, FILE* pf);
+int MY_STUDENT_Save(void** pdat, FILE** pf);
 int MY_STUDENT_Read(void** pdat, FILE* pf);
 void* MY_STUDENT_Input();
 void* MY_STUDENT_SearchData();
 void MY_STUDENT_SearchData_Free(void* searchDat);
-enum MY_DATA_TYPE MY_STUDENT_GetType(void* pdat);
-
-// Internal functions, there is no need to declare them in the header file
-
-/*
-
-static int MY_STUDENT_SaveDynamicString(const char* str, FILE* pf);
-
-static int MY_STUDENT_ReadDynamicString(char** str, FILE* pf);
-
-static char* readSurname();
-
-*/
+enum MY_DATA_TYPE MY_STUDENT_GetType();
 
 #endif // MY_STUDENT__H

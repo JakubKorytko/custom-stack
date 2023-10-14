@@ -16,37 +16,34 @@ static const char* fieldsOfStudyName[] = {
 	"FIELDS_OF_STUDY_TOTAL"
 };
 
-static char* saveSurname() {
-
-}
-
 static char* readSurname() {
 
 	// function that shortens allocated memory to the maximum length needed
 	char* buff;
+	size_t buff_len = 0;
 
-	emptyString:
+	while (buff_len <= 1) {
 
-	buff = (char*)malloc(MAX_SURNAME_SIZE * sizeof(char));
+		buff = (char*)malloc(MAX_SURNAME_SIZE * sizeof(char));
 
-	if (!buff) {
-		handle_error(ERROR__MEMORY_ALLOCATION, __FILE__, __LINE__);
-		return NULL;
-	}
+		if (!buff) {
+			handle_error(ERROR__MEMORY_ALLOCATION, __FILE__, __LINE__);
+			return NULL;
+		}
 
-	// gets(buff);
-	fgets(buff, MAX_SURNAME_SIZE, stdin);
-	// unfortunately I am not able to use the gets function because of the version I am using to create the project
-	// since the C11 version gets been permanently removed from the stdio.h library: https://en.wikipedia.org/wiki/C11_(C_standard_revision)
+		fgets(buff, MAX_SURNAME_SIZE, stdin);
+		// unfortunately I am not able to use the gets function because of the version I am using to create the project
+		// since the C11 version gets been permanently removed from the stdio.h library: https://en.wikipedia.org/wiki/C11_(C_standard_revision)
 
-	size_t buff_len = strlen(buff);
+		buff_len = strlen(buff);
 
-	if (buff_len <= 1) {
+		if (buff_len > 1) {
+			break;
+		}
+
 		if (buff) {
 			free(buff);
 		}
-
-		goto emptyString;
 	}
 
 	if (buff_len > 0 && buff[buff_len - 1] == '\n') {
@@ -155,8 +152,8 @@ void MY_STUDENT_Print(void* ptr)
 
 int MY_STUDENT_Compare(void* pCurData, void* pSearchData) {
 
-	struct MY_STUDENT* pcur = (struct MY_STUDENT*)pCurData;
-	struct MY_STUDENT* psearch = (struct MY_STUDENT*)pSearchData;
+	const struct MY_STUDENT* pcur = (struct MY_STUDENT*)pCurData;
+	const struct MY_STUDENT* psearch = (struct MY_STUDENT*)pSearchData;
 
 	if (strcmp(pcur->student_surname, psearch->student_surname) == 0)
 		return 1;
@@ -164,8 +161,8 @@ int MY_STUDENT_Compare(void* pCurData, void* pSearchData) {
 	return 0;
 }
 
-static int MY_STUDENT_SaveDynamicString(const char* str, FILE* pf) {
-	if (str == NULL || pf == NULL) {
+static int MY_STUDENT_SaveDynamicString(const char* str, FILE** pf) {
+	if (str == NULL || *pf == NULL) {
 		handle_error(ERROR__INVALID_POINTER, __FILE__, __LINE__);
 		return 0;
 	}
@@ -173,17 +170,15 @@ static int MY_STUDENT_SaveDynamicString(const char* str, FILE* pf) {
 	size_t length = strlen(str);
 
 	// saving the length of the string
-	if (fwrite(&length, sizeof(size_t), 1, pf) != 1) {
+	if (fwrite(&length, sizeof(size_t), 1, *pf) != 1) {
 		handle_error(ERROR__FILE_WRITE, __FILE__, __LINE__);
 		return 0;
 	}
 
 	// saving the string
-	if (length > 0) {
-		if (fwrite(str, sizeof(char), length, pf) != length) {
-			handle_error(ERROR__FILE_WRITE, __FILE__, __LINE__);
-			return 0;
-		}
+	if (length <= 0 || fwrite(str, sizeof(char), length, *pf) != length) {
+		handle_error(ERROR__FILE_WRITE, __FILE__, __LINE__);
+		return 0;
 	}
 
 	return 1;
@@ -232,7 +227,7 @@ static int MY_STUDENT_ReadDynamicString(char** str, FILE* pf) {
 	return 1;
 }
 
-int MY_STUDENT_Save(void** pdat, FILE* pf) {
+int MY_STUDENT_Save(void** pdat, FILE** pf) {
 	if (pdat == NULL || *pdat == NULL || pf == NULL) {
 		handle_error(ERROR__INVALID_POINTER, __FILE__, __LINE__);
 		return 0;
@@ -240,8 +235,10 @@ int MY_STUDENT_Save(void** pdat, FILE* pf) {
 
 	struct MY_STUDENT* student = (struct MY_STUDENT*)*pdat;
 
+	MY_STUDENT_Print(student);
+
 	// saving the entire MY_STUDENT object
-	if (fwrite(student, sizeof(struct MY_STUDENT), 1, pf) != 1) {
+	if (fwrite(student, sizeof(struct MY_STUDENT), 1, *pf) != 1) {
 		handle_error(ERROR__FILE_WRITE, __FILE__, __LINE__);
 		return 0;
 	}
@@ -327,7 +324,7 @@ void* MY_STUDENT_Input() {
 	scanf_s("%zu", &input);
 	stdin_clear();
 
-	if (input >= 0 && input < FIELDS_OF_STUDY_TOTAL) {
+	if (input < FIELDS_OF_STUDY_TOTAL) {
 		field_of_study = (enum FIELDS_OF_STUDY)input;
 	}
 	else {
@@ -381,8 +378,7 @@ void MY_STUDENT_SearchData_Free(void * searchDat) {
 
 }
 
-enum MY_DATA_TYPE MY_STUDENT_GetType(void* pdat)
+enum MY_DATA_TYPE MY_STUDENT_GetType()
 {
-	struct MY_STUDENT* ptr = (struct MY_STUDENT*)pdat;
 	return DATA_TYPE_MY_STUDENT;
 }

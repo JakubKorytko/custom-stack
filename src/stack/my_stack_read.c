@@ -3,7 +3,7 @@
 #include "src/stack/my_stack.h"
 
 static struct ExecResult MY_STACK_Read__Open_file(FILE** file) {
-    fopen_s(file, STACK_DATA_FILENAME, "rb");
+    fopen_s(file, STACK_DATA_FILENAME, FILE_READ_MODE);
 
     if (*file == NULL)
     {

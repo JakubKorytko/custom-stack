@@ -1,5 +1,6 @@
 #ifndef ERRORS_HANDLER__H
 #define ERRORS_HANDLER__H
+#include <stdlib.h>
 
 enum ErrorCode {
 	ERROR__NONE,
@@ -33,21 +34,6 @@ struct ExecResult error(short errorCode, char* file, unsigned int line);
 
 struct ExecResult success();
 
-void setInvalidParameterHandler();
-
-
-// Internal functions, there is no need to declare them in the header file
-
-/*
-
-static void display_error(Error error, const char* file, unsigned int line);
-
-static void myInvalidParameterHandler(const wchar_t* expression,
-	const wchar_t* function,
-	const wchar_t* file,
-	unsigned int line,
-	uintptr_t pReserved);
-
-*/
+_invalid_parameter_handler setInvalidParameterHandler();
 
 #endif // ERRORS_HANDLER__H

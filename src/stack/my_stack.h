@@ -1,45 +1,8 @@
 #ifndef MY_STACK__H
 #define MY_STACK__H
 
-enum MY_DATA_TYPE
-{
-	DATA_TYPE_MY_STUDENT,
-	// (...)
-	DATA_TYPE_TOTAL // MARKS THE END OF AN ENUM, ALWAYS AT THE END
-};
-
-typedef int (*CompData)(void* pcurData, void* pSearchData); // Type definition: pointer to a function with a prototype int NazwaFunkcji(void *, void *);
-typedef void (*PrintObject)(void* pdat); // Type definition: pointer to a function with a prototype void NazwaFunkcji(void*);
-typedef void (*FreeObject)(void* pdat); // Type definition: pointer to a function with a prototype void NazwaFunkcji(void*);
-typedef int (*IO_Object)(void** pdat, FILE* pf); // Type definition: pointer to a function with a prototype int NazwaFunkcji(void**, FILE*);
-typedef void (*FreeSearchData)(void* searchDat); // Type definition: pointer to a function with a prototype void NazwaFunkcji(void*);
-typedef void* (*SearchData)(); // Type definition: pointer to a function with a prototype void* NazwaFunkcji();
-typedef void* (*Push)(); // Type definition: pointer to a function with a prototype void* NazwaFunkcji();
-typedef enum MY_DATA_TYPE(*GetObjectTyp)(void* pdat); // Type definition: pointer to a function with a prototype MY_DATA_TYPE NazwaFunkcji(void*);
-
-typedef void (*GetFuncPtr)(
-	enum MY_DATA_TYPE typ,
-	PrintObject* pfunprint,
-	FreeObject* pfunfree,
-	Push* ptr_fun_push,
-	IO_Object* pfunsave,
-	IO_Object* pfunread,
-	CompData*  ptr_fun_comp,
-	SearchData*  fun_search_data,
-	FreeSearchData* fun_free_search_data,
-	GetObjectTyp* pfungettyp
-);
-
-void SetFunctionPointers(enum MY_DATA_TYPE typ, PrintObject* pfunprint,
-	FreeObject* pfunfree,
-	Push* ptr_fun_push,
-	IO_Object* pfunsave,
-	IO_Object* pfunread,
-	CompData* ptr_fun_comp,
-	SearchData* fun_search_data,
-	FreeSearchData* fun_free_search_data,
-	GetObjectTyp* pfungettyp
-);
+#include "data_types.h"
+#include "function_pointers.h"
 
 struct MY_STACK {
 	void* pData;
@@ -67,10 +30,16 @@ void MY_STACK_SetFuncPointers(GetFuncPtr ptr);
 void MY_STACK_Save();
 void MY_STACK_Read();
 
+
+struct MY_STACK* MY_STACK_GetTopElement();
+size_t MY_STACK_GetStackLength();
+
 // the size of reserved memory for records when writing and reading to/from a file
 #define rec_type __int64
 #define rec_size sizeof(rec_type)
 
 extern const char STACK_DATA_FILENAME[];
+extern const char FILE_WRITE_MODE[];
+extern const char FILE_READ_MODE[];
 
 #endif // MY_STACK__H

@@ -32,6 +32,17 @@ static void push(enum MY_DATA_TYPE type) {
 		&tmp->ptr_fun_get_type);
 
 	tmp->typ = type;
+
+	if (!tmp->ptr_fun_push) {
+
+		if (tmp) {
+			free(tmp);
+		}
+
+		handle_error(ERROR__UNKNOWN, __FILE__, __LINE__);
+		return;
+	}
+
 	tmp->pData = (*tmp->ptr_fun_push)();
 
 	if (!MY_STACK_Push(tmp)) {
@@ -63,6 +74,16 @@ static void find(enum MY_DATA_TYPE type)
 		&tmp->ptr_fun_free, &tmp->ptr_fun_push, &tmp->ptr_fun_save, &tmp->ptr_fun_read,
 		&tmp->ptr_fun_comp, &tmp->fun_search_data, &tmp->fun_free_search_data,
 		&tmp->ptr_fun_get_type);
+
+	if (!*tmp->fun_free_search_data) {
+
+		if (tmp) {
+			free(tmp);
+		}
+
+		handle_error(ERROR__UNKNOWN, __FILE__, __LINE__);
+		return;
+	}
 
 	void* searchDat = (*tmp->fun_search_data)();
 
@@ -127,11 +148,10 @@ void menu() {
 	size_t op = 0;
 	while (op >= INTERFACE_PUSH && op <= INTERFACE_STOP)
 	{
-		size_t it;
 
 		output(MESSAGE__MENU);
 
-		for (it = 0; it < INTERFACE_TOTAL; ++it) {
+		for (size_t it = 0; it < INTERFACE_TOTAL; ++it) {
 			printf("%s\n", strtab[it]);
 		}
 
@@ -161,48 +181,8 @@ void menu() {
 			return;
 		default:
 			output(MESSAGE__UNKNOWN_MENU_OPTION);
-		};
+		}
 
-	}
-
-}
-
-void SetFunctionPointers(enum MY_DATA_TYPE typ, PrintObject* pfunprint,
-	FreeObject* pfunfree,
-	Push* ptr_fun_push,
-	IO_Object* pfunsave,
-	IO_Object* pfunread,
-	CompData*  ptr_fun_comp,
-	SearchData*  fun_search_data,
-	FreeSearchData* fun_free_search_data,
-	GetObjectTyp* pfungettyp) {
-
-	*pfunprint = NULL;
-	*pfunfree = NULL;
-	*pfunsave = NULL;
-	*pfunread = NULL;
-	*ptr_fun_comp = NULL;
-	*fun_search_data = NULL;
-	*fun_free_search_data = NULL;
-	*pfungettyp = NULL;
-
-	switch (typ) {
-	case DATA_TYPE_MY_STUDENT:
-		*ptr_fun_push = MY_STUDENT_Push;
-		*pfunprint = MY_STUDENT_Print;
-		*pfunfree = MY_STUDENT_Free;
-		*pfunsave = MY_STUDENT_Save;
-		*pfunread = MY_STUDENT_Read;
-		*ptr_fun_comp = MY_STUDENT_Compare;
-		*fun_search_data = MY_STUDENT_SearchData;
-		*fun_free_search_data = MY_STUDENT_SearchData_Free;
-		*pfungettyp = MY_STUDENT_GetType;
-		break;
-	// case DATA_TYPE_:
-	// (...)
-	default:
-		handle_error(ERROR__INVALID_DATA_TYPE, __FILE__, __LINE__);
-		return;
 	}
 
 }

@@ -12,7 +12,7 @@ static const char* custom_messages[] = {
 	"\nStack is empty\n",
 	"Read:\n\n",
 	"\n",
-	"\Found: \n",
+	"\nFound: \n",
 	"\nElement not found\n",
 	"\nSelect options from the menu below:\n\n",
 	"\nSelect: "

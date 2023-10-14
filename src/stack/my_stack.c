@@ -2,12 +2,23 @@
 
 #include "src/stack/my_stack.h"
 
-const char STACK_DATA_FILENAME[] = "stack_data.bin";
+const char STACK_DATA_FILENAME[] = "stack_data.txt";
+const char FILE_WRITE_MODE[] = "w";
+const char FILE_READ_MODE[] = "r";
 
 static struct MY_STACK* top;  // pointer to the first element in the stack
-static size_t stack_length;
-static GetFuncPtr ptr_fun_get_pointers;
 
+struct MY_STACK* MY_STACK_GetTopElement() {
+    return top;
+}
+
+static size_t stack_length;
+
+size_t MY_STACK_GetStackLength() {
+    return stack_length;
+}
+
+static GetFuncPtr ptr_fun_get_pointers;
 
 void MY_STACK_SetFuncPointers(GetFuncPtr ptr)
 {
@@ -133,75 +144,4 @@ void MY_STACK_Free() {
 
     top = NULL;
     stack_length = 0;
-}
-
-
-void MY_STACK_Save()
-{
-    if (stack_length == 0) {
-        // no need to save anything since the stack is empty
-        return;
-    }
-
-    FILE* file;
-    size_t it;
-    unsigned int no_it = (unsigned int)stack_length;
-
-    rec_type* file_desc = (rec_type*)malloc((stack_length + 1) * sizeof(rec_type));
-
-    if (!file_desc) {
-        handle_error(ERROR__MEMORY_ALLOCATION, __FILE__, __LINE__);
-        return;
-    }
-
-    fopen_s(&file, STACK_DATA_FILENAME, "wb");
-
-    if (!file)
-    {
-        handle_error(ERROR__FILE_OPEN, __FILE__, __LINE__);
-        return;
-    }
-
-    if (fwrite(&no_it, sizeof(unsigned int), 1, file) != 1) {
-        handle_error(ERROR__FILE_WRITE, __FILE__, __LINE__);
-        return;
-    };
-
-    _fseeki64(file, (stack_length + 1) * rec_size, SEEK_CUR);
-
-    struct MY_STACK* current = top;
-
-    // moving items from the main stack to a file
-    for (it = 0; it < stack_length; ++it)
-    {
-        file_desc[it] = _ftelli64(file);
-
-        // Save the type before saving the data
-        if (fwrite(&(current->typ), sizeof(enum MY_DATA_TYPE), 1, file) != 1) {
-            handle_error(ERROR__FILE_WRITE, __FILE__, __LINE__);
-            return;
-        }
-
-        (current->ptr_fun_save)(&current->pData, file);
-
-        current = current->next;
-    }
-
-    file_desc[it] = _ftelli64(file);
-
-    _fseeki64(file, sizeof(unsigned int), SEEK_SET);
-    
-    if (fwrite(file_desc, sizeof(rec_type), stack_length + 1, file) != stack_length + 1) {
-        handle_error(ERROR__FILE_WRITE, __FILE__, __LINE__);
-        return;
-    }
-
-    if (file) {
-        fclose(file);
-    }
-
-    if (file_desc)
-        free(file_desc);
-
-    file_desc = NULL;
 }
