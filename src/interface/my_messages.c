@@ -3,7 +3,7 @@
 #include "src/pch_source/stdafx.h"
 #include "src/interface/my_messages.h"
 
-static const char* generic_messages[] = {
+const char* generic_messages[] = {
     "Unknown operation code\n",
     "\nStack is empty\n",
     "\nRead:\n\n",
@@ -11,7 +11,9 @@ static const char* generic_messages[] = {
     "\nFound: \n",
     "\nElement not found\n",
     "\nSelect options from the menu below:\n\n",
-    "\nSelect: "
+    "\nSelect: ",
+    "\nSaved %u items to the file\n",
+    "\nRead %u items from the file\n"
 };
 
 

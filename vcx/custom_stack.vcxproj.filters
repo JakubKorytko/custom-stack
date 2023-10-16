@@ -57,9 +57,6 @@
     <ClInclude Include="..\src\pch_source\targetver.h">
       <Filter>PCH Source</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\student\my_student.h">
-      <Filter>Student</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\stack\data_types.h">
       <Filter>Stack\Data types</Filter>
     </ClInclude>
@@ -68,6 +65,9 @@
     </ClInclude>
     <ClInclude Include="..\src\stack\function_pointers.h">
       <Filter>Stack\Function pointers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\student\my_student.h">
+      <Filter>Student</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -86,9 +86,6 @@
     <ClCompile Include="..\src\pch_source\stdafx.c">
       <Filter>PCH Source\Stdafx</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\student\my_student.c">
-      <Filter>Student</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\stack\my_stack_read.c">
       <Filter>Stack\Save &amp; Read</Filter>
     </ClCompile>
@@ -103,6 +100,9 @@
     </ClCompile>
     <ClCompile Include="..\src\stack\function_pointers.c">
       <Filter>Stack\Function pointers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\student\my_student.c">
+      <Filter>Student</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

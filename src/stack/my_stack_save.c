@@ -107,11 +107,6 @@ static struct ExecResult MY_STACK_Save__Move_items_to_file(
 void MY_STACK_Save() {
     size_t stack_length = MY_STACK_GetStackLength();
 
-    if (stack_length == 0) {
-        // no need to save anything since the stack is empty
-        return;
-    }
-
     FILE* file = NULL;
     unsigned int no_it = (unsigned int)stack_length;
 
@@ -119,6 +114,16 @@ void MY_STACK_Save() {
 
     if (result.errorCode == -1) {
         result = MY_STACK_Save__Write_no_items(file, no_it);
+    }
+
+    if (stack_length == 0) {
+        // no need to save any elements since the stack is empty
+        if (file) {
+            fclose(file);
+        }
+
+        printf_s("\nSaved empty stack to file\n");
+        return;
     }
 
     if (result.errorCode == -1) {
@@ -132,4 +137,6 @@ void MY_STACK_Save() {
     if (result.errorCode != -1) {
         handle_error(result.errorCode, result.file, result.line);
     }
+
+    printf_s(generic_messages[MESSAGE__SAVED_N_ELEMENTS], no_it);
 }

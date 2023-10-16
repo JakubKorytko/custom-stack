@@ -148,6 +148,17 @@ void MY_STACK_Read() {
         result = MY_STACK_Read__Read_file_length(file, &tmp_length);
     }
 
+    if (tmp_length == 0) {
+        // no need to read anything since there is 0 elements
+        // in the file
+        if (file) {
+            fclose(file);
+        }
+
+        printf_s("\nRead empty stack from file\n");
+        return;
+    }
+
     if (result.errorCode == -1) {
         result = MY_STACK_Read__Allocate_memory(&file_desc, tmp_length);
     }
@@ -171,4 +182,6 @@ void MY_STACK_Read() {
     if (result.errorCode != -1) {
         handle_error(result.errorCode, result.file, result.line);
     }
+
+    printf_s(generic_messages[MESSAGE__READ_N_ELEMENTS], tmp_length);
 }
