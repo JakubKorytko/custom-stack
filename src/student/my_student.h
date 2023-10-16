@@ -3,6 +3,9 @@
 #ifndef SRC_STUDENT_MY_STUDENT_H_
 #define SRC_STUDENT_MY_STUDENT_H_
 
+// To make the types in this header recognized by the IDE
+#include <stdio.h>
+
 enum FIELDS_OF_STUDY {
     Computer_Science,
     Mathematics,

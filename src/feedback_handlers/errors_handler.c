@@ -1,7 +1,7 @@
 // Copyright: 2023 Jakub Korytko
 
 #include "src/pch_source/stdafx.h"
-#include "src/interface/errors_handler.h"
+#include "src/feedback_handlers/errors_handler.h"
 
 // NOLINTNEXTLINE(build/include_order)
 #include <crtdbg.h>  // must be included after stdafx.h

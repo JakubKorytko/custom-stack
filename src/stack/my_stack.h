@@ -3,6 +3,10 @@
 #ifndef SRC_STACK_MY_STACK_H_
 #define SRC_STACK_MY_STACK_H_
 
+// To make the types in this header recognized by the IDE
+#include <stdio.h>
+#include "src/data_type_handlers/function_pointers.h"
+
 void MY_STACK_Init(GetFuncPtr ptr);
 void MY_STACK_Free();
 struct MY_STACK* MY_STACK_Push(struct MY_STACK* pdat);

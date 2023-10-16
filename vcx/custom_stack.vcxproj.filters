@@ -13,9 +13,6 @@
     <Filter Include="Stack">
       <UniqueIdentifier>{cebf2625-b41e-43a2-837c-6f819ac5a62f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Interface\Errors handler">
-      <UniqueIdentifier>{93d0c1fa-f7a6-4bff-9ae2-c413162a5abe}</UniqueIdentifier>
-    </Filter>
     <Filter Include="PCH Source\Stdafx">
       <UniqueIdentifier>{26a2b4f7-6584-4080-bac6-5a8d914ed13f}</UniqueIdentifier>
     </Filter>
@@ -25,63 +22,60 @@
     <Filter Include="Stack\Save &amp; Read">
       <UniqueIdentifier>{61e7399d-8fc2-4390-8d47-836569101127}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Stack\Data types">
-      <UniqueIdentifier>{cda2e7a9-0c7c-4498-88cc-39e0aaf31223}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Stack\Main">
       <UniqueIdentifier>{1b4d61f5-62ba-4666-93da-5ad2c11a12f9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Interface\Main">
-      <UniqueIdentifier>{d0f4031b-4780-4623-ae92-ef762959e777}</UniqueIdentifier>
+    <Filter Include="Data type handlers">
+      <UniqueIdentifier>{cb1a2d2c-c2ae-444d-b607-f827795e23d0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Interface\Messages">
-      <UniqueIdentifier>{2964d29b-649f-42e5-ac7f-54a9958dad68}</UniqueIdentifier>
+    <Filter Include="Feedback handlers">
+      <UniqueIdentifier>{09993464-ec8d-463d-b81b-192caacb3e80}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Stack\Function pointers">
+    <Filter Include="Data type handlers\Function pointers">
       <UniqueIdentifier>{efff3ae7-1622-45b8-967e-6ac5a2c0b52f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data type handlers\Data types">
+      <UniqueIdentifier>{cda2e7a9-0c7c-4498-88cc-39e0aaf31223}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Feedback handlers\Errors handler">
+      <UniqueIdentifier>{93d0c1fa-f7a6-4bff-9ae2-c413162a5abe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Feedback handlers\Messages handler">
+      <UniqueIdentifier>{2964d29b-649f-42e5-ac7f-54a9958dad68}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\interface\errors_handler.h">
-      <Filter>Interface\Errors handler</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\interface\my_interface.h">
-      <Filter>Interface\Main</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\interface\my_messages.h">
-      <Filter>Interface\Messages</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\pch_source\stdafx.h">
       <Filter>PCH Source\Stdafx</Filter>
     </ClInclude>
     <ClInclude Include="..\src\pch_source\targetver.h">
       <Filter>PCH Source</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\stack\data_types.h">
-      <Filter>Stack\Data types</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\stack\my_stack.h">
       <Filter>Stack\Main</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\stack\function_pointers.h">
-      <Filter>Stack\Function pointers</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\student\my_student.h">
       <Filter>Student</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\data_type_handlers\function_pointers.h">
+      <Filter>Data type handlers\Function pointers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\data_type_handlers\data_types.h">
+      <Filter>Data type handlers\Data types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\feedback_handlers\errors_handler.h">
+      <Filter>Feedback handlers\Errors handler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\feedback_handlers\my_messages.h">
+      <Filter>Feedback handlers\Messages handler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\interface\my_interface.h">
+      <Filter>Interface</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\main.c">
       <Filter>Entry point</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\interface\errors_handler.c">
-      <Filter>Interface\Errors handler</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\interface\my_interface.c">
-      <Filter>Interface\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\interface\my_messages.c">
-      <Filter>Interface\Messages</Filter>
     </ClCompile>
     <ClCompile Include="..\src\pch_source\stdafx.c">
       <Filter>PCH Source\Stdafx</Filter>
@@ -95,14 +89,23 @@
     <ClCompile Include="..\src\stack\my_stack.c">
       <Filter>Stack\Main</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\stack\data_types.c">
-      <Filter>Stack\Data types</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\stack\function_pointers.c">
-      <Filter>Stack\Function pointers</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\student\my_student.c">
       <Filter>Student</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\data_type_handlers\function_pointers.c">
+      <Filter>Data type handlers\Function pointers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\data_type_handlers\data_types.c">
+      <Filter>Data type handlers\Data types</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\feedback_handlers\errors_handler.c">
+      <Filter>Feedback handlers\Errors handler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\feedback_handlers\my_messages.c">
+      <Filter>Feedback handlers\Messages handler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\interface\my_interface.c">
+      <Filter>Interface</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

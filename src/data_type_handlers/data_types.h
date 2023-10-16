@@ -1,9 +1,10 @@
 // Copyright: 2023 Jakub Korytko
 
-#ifndef SRC_STACK_DATA_TYPES_H_
-#define SRC_STACK_DATA_TYPES_H_
+#ifndef SRC_DATA_TYPE_HANDLERS_DATA_TYPES_H_
+#define SRC_DATA_TYPE_HANDLERS_DATA_TYPES_H_
 
-#include "src/stack/function_pointers.h"
+// To make the types in this header recognized by the IDE
+#include "src/data_type_handlers/function_pointers.h"
 
 struct MY_STACK {
     void* pData;
@@ -89,4 +90,4 @@ enum CUSTOM_MESSAGES {
 extern const struct MY_DATA_POINTERS* MY_DATA_POINTERS_ARRAY[1];
 extern const enum MY_DATA_TYPE interace_type;
 
-#endif  // SRC_STACK_DATA_TYPES_H_
+#endif  // SRC_DATA_TYPE_HANDLERS_DATA_TYPES_H_

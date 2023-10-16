@@ -1,7 +1,7 @@
 // Copyright: 2023 Jakub Korytko
 
 #include "src/pch_source/stdafx.h"
-#include "src/stack/data_types.h"
+#include "src/data_type_handlers/data_types.h"
 
 #include "src/student/my_student.h"
 

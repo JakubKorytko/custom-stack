@@ -13,9 +13,9 @@
 
 // modules that are used across the files,
 // should be reachable from everywhere
-#include "src/stack/data_types.h"
-#include "src/interface/my_messages.h"
-#include "src/stack/function_pointers.h"
-#include "src/interface/errors_handler.h"
+#include "src/data_type_handlers/data_types.h"
+#include "src/feedback_handlers/my_messages.h"
+#include "src/data_type_handlers/function_pointers.h"
+#include "src/feedback_handlers/errors_handler.h"
 
 #endif  // SRC_PCH_SOURCE_STDAFX_H_

@@ -1,8 +1,11 @@
 // Copyright: 2023 Jakub Korytko
 // LINT_C_FILE
 
-#ifndef SRC_INTERFACE_ERRORS_HANDLER_H_
-#define SRC_INTERFACE_ERRORS_HANDLER_H_
+#ifndef SRC_FEEDBACK_HANDLERS_ERRORS_HANDLER_H_
+#define SRC_FEEDBACK_HANDLERS_ERRORS_HANDLER_H_
+
+// To make the types in this header recognized by the IDE
+#include <stdlib.h>
 
 enum ErrorCode {
     ERROR__NONE,
@@ -40,4 +43,4 @@ struct ExecResult success();
 
 _invalid_parameter_handler setInvalidParameterHandler();
 
-#endif  // SRC_INTERFACE_ERRORS_HANDLER_H_
+#endif  // SRC_FEEDBACK_HANDLERS_ERRORS_HANDLER_H_

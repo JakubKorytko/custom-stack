@@ -19,26 +19,26 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\interface\errors_handler.h" />
+    <ClInclude Include="..\src\data_type_handlers\data_types.h" />
+    <ClInclude Include="..\src\data_type_handlers\function_pointers.h" />
+    <ClInclude Include="..\src\feedback_handlers\errors_handler.h" />
+    <ClInclude Include="..\src\feedback_handlers\my_messages.h" />
     <ClInclude Include="..\src\interface\my_interface.h" />
-    <ClInclude Include="..\src\interface\my_messages.h" />
     <ClInclude Include="..\src\pch_source\stdafx.h" />
     <ClInclude Include="..\src\pch_source\targetver.h" />
-    <ClInclude Include="..\src\stack\data_types.h" />
-    <ClInclude Include="..\src\stack\function_pointers.h" />
     <ClInclude Include="..\src\stack\my_stack.h" />
     <ClInclude Include="..\src\student\my_student.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\main.c" />
-    <ClCompile Include="..\src\interface\errors_handler.c" />
+    <ClCompile Include="..\src\data_type_handlers\data_types.c" />
+    <ClCompile Include="..\src\data_type_handlers\function_pointers.c" />
+    <ClCompile Include="..\src\feedback_handlers\errors_handler.c" />
+    <ClCompile Include="..\src\feedback_handlers\my_messages.c" />
     <ClCompile Include="..\src\interface\my_interface.c" />
-    <ClCompile Include="..\src\interface\my_messages.c" />
     <ClCompile Include="..\src\pch_source\stdafx.c">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="..\src\stack\data_types.c" />
-    <ClCompile Include="..\src\stack\function_pointers.c" />
     <ClCompile Include="..\src\stack\my_stack.c" />
     <ClCompile Include="..\src\stack\my_stack_read.c" />
     <ClCompile Include="..\src\stack\my_stack_save.c" />

@@ -1,7 +1,7 @@
 // Copyright: 2023 Jakub Korytko
 
-#ifndef SRC_INTERFACE_MY_MESSAGES_H_
-#define SRC_INTERFACE_MY_MESSAGES_H_
+#ifndef SRC_FEEDBACK_HANDLERS_MY_MESSAGES_H_
+#define SRC_FEEDBACK_HANDLERS_MY_MESSAGES_H_
 
 typedef enum CUSTOM_MESSAGES CUSTOM_MESSAGES;
 
@@ -28,4 +28,4 @@ void output(enum CUSTOM_MESSAGES message);
 extern const char* generic_messages[];
 extern const char* custom_messages[];
 
-#endif  // SRC_INTERFACE_MY_MESSAGES_H_
+#endif  // SRC_FEEDBACK_HANDLERS_MY_MESSAGES_H_

@@ -1,7 +1,7 @@
 // Copyright: 2023 Jakub Korytko
 
-#ifndef SRC_STACK_FUNCTION_POINTERS_H_
-#define SRC_STACK_FUNCTION_POINTERS_H_
+#ifndef SRC_DATA_TYPE_HANDLERS_FUNCTION_POINTERS_H_
+#define SRC_DATA_TYPE_HANDLERS_FUNCTION_POINTERS_H_
 
 // Type definition: pointer to
 // a function with a prototype int Function(void *, void *);
@@ -40,4 +40,4 @@ typedef void (*GetFuncPtr)(struct MY_STACK* element, enum MY_DATA_TYPE type);
 
 void SetFunctionPointers(struct MY_STACK* element, enum MY_DATA_TYPE type);
 
-#endif  // SRC_STACK_FUNCTION_POINTERS_H_
+#endif  // SRC_DATA_TYPE_HANDLERS_FUNCTION_POINTERS_H_
