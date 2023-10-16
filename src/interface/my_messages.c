@@ -6,14 +6,14 @@
 const char* generic_messages[] = {
     "Unknown operation code\n",
     "\nStack is empty\n",
-    "\nRead:\n\n",
+    "Read:\n",
     "\n",
     "\nFound: \n",
     "\nElement not found\n",
     "\nSelect options from the menu below:\n\n",
     "\nSelect: ",
     "\nSaved %u items to the file\n",
-    "\nRead %u items from the file\n"
+    "Read %u items from the file\n"
 };
 
 

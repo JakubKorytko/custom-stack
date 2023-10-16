@@ -89,6 +89,8 @@ static struct ExecResult MY_STACK_Read__Process_data(
     unsigned int rec;
     enum MY_DATA_TYPE type;
 
+    generic_output(MESSAGE__NEWLINE);
+
     for (unsigned int it = 0; it < length; ++it) {
         // we use a temporary variable because
         // every time we call MY_STACK_Push
