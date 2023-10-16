@@ -3,7 +3,6 @@
 #ifndef SRC_STACK_DATA_TYPES_H_
 #define SRC_STACK_DATA_TYPES_H_
 
-#include "src/student/my_student.h"
 #include "src/stack/function_pointers.h"
 
 struct MY_STACK {
@@ -53,27 +52,41 @@ struct MY_STACK {
 
 struct MY_DATA_POINTERS {
     enum MY_DATA_TYPE typ;
-    PrintObject* pfunprint;
-    FreeObject* pfunfree;
-    Push* ptr_fun_push;
-    IO_Object* pfunsave;
-    IO_Object* pfunread;
-    CompData* ptr_fun_comp;
-    SearchData* fun_search_data;
-    FreeSearchData* fun_free_search_data;
-    GetObjectTyp* pfungettyp;
+    PrintObject pfunprint;
+    FreeObject pfunfree;
+    Push ptr_fun_push;
+    IO_Object pfunsave;
+    IO_Object pfunread;
+    CompData ptr_fun_comp;
+    SearchData fun_search_data;
+    FreeSearchData fun_free_search_data;
+    GetObjectTyp pfungettyp;
 };
 
-enum MY_DATA_TYPE
-{
+enum MY_DATA_TYPE {
     DATA_TYPE_MY_STUDENT,
+    // add more data types here
     // (...)
 
     DATA_TYPE_TOTAL
     // MARKS THE END OF AN ENUM, ALWAYS AT THE END
 };
 
+enum CUSTOM_MESSAGES {
+    MESSAGE__SURNAME_INPUT,
+    MESSAGE__STUDY_FIELD_LIST,
+    MESSAGE__BIRTHDAY_INPUT,
+    MESSAGE__STUDY_FIELD_INPUT,
+    MESSAGE__STUDENT_PRINT,
+    // add more custom_messages enum variables that points to the
+    // custom_messages (data_types.c) values
+    // (...)
+
+    CUSTOM_MESSAGES__TOTAL
+    // MARKS THE END OF AN ENUM, ALWAYS AT THE END
+};
 
 extern const struct MY_DATA_POINTERS* MY_DATA_POINTERS_ARRAY[1];
+extern const enum MY_DATA_TYPE interace_type;
 
 #endif  // SRC_STACK_DATA_TYPES_H_

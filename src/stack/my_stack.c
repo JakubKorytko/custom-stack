@@ -1,7 +1,6 @@
 // Copyright: 2023 Jakub Korytko
 
 #include "src/pch_source/stdafx.h"
-
 #include "src/stack/my_stack.h"
 
 const char STACK_DATA_FILENAME[] = "stack_data.bin";
@@ -76,7 +75,7 @@ struct MY_STACK MY_STACK_Pop() {
 
 void MY_STACK_Display() {
     if (!top) {
-        output(MESSAGE__STACK_EMPTY);
+        generic_output(MESSAGE__STACK_EMPTY);
         return;
     }
 
@@ -90,7 +89,7 @@ void MY_STACK_Display() {
 
 void MY_STACK_Display_Top() {
     if (!top) {
-        output(MESSAGE__STACK_EMPTY);
+        generic_output(MESSAGE__STACK_EMPTY);
         return;
     }
 

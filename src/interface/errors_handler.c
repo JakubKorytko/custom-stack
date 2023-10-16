@@ -3,8 +3,8 @@
 #include "src/pch_source/stdafx.h"
 #include "src/interface/errors_handler.h"
 
-#include <crtdbg.h>
-#include "src/stack/my_stack.h"
+// NOLINTNEXTLINE(build/include_order)
+#include <crtdbg.h>  // must be included after stdafx.h
 
 static const char* error_messages[] = {
     "No error",
@@ -40,11 +40,6 @@ static void display_error(Error error, const char* file, unsigned int line) {
 
 void handle_error(Error error, const char* file, unsigned int line) {
     display_error(error, file, line);
-
-    if (error == ERROR__MEMORY_ALLOCATION) {
-        MY_STACK_Free();
-    }
-
     system("pause");
     exit(1);
 }
@@ -52,7 +47,15 @@ void handle_error(Error error, const char* file, unsigned int line) {
 static void myInvalidParameterHandler(const wchar_t* expression,
     const wchar_t* function,
     const wchar_t* file,
-    unsigned int line) {
+    unsigned int line,
+    uintptr_t _ /* if you want to use this parameter, see comments below */) {
+
+    // The "uintptr_t _" function parameter is here because
+    // this function must be of type _invalid_parameter_handler
+    // to be used in setInvalidParameterHandler
+    // if you want to use it, remove the line below
+    (void)(_);  // <-------
+    // it is here because it silences the warning about the unused variable
 
     // notice the lack of commas between the strings
     // this is because its only one string,
@@ -60,7 +63,7 @@ static void myInvalidParameterHandler(const wchar_t* expression,
     wprintf(
         L"Invalid parameter detected in function %s."
         L" File: %s"
-        "Line: %d\n",
+        L"Line: %d\n",
         function, file, line);
 
     wprintf(L"Expression: %s\n\n", expression);

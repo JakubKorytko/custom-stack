@@ -3,8 +3,6 @@
 #ifndef SRC_INTERFACE_MY_INTERFACE_H_
 #define SRC_INTERFACE_MY_INTERFACE_H_
 
-#include "src/stack/my_stack.h"
-
 enum MY_INTERFACE_ENUM {
     INTERFACE_PUSH,
     INTERFACE_POP,
@@ -22,6 +20,5 @@ enum MY_INTERFACE_ENUM {
 };
 
 void menu();
-void stdin_clear();
 
 #endif  // SRC_INTERFACE_MY_INTERFACE_H_

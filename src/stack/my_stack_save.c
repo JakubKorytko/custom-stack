@@ -64,6 +64,7 @@ static struct ExecResult MY_STACK_Save__Move_items_to_file(
     rec_type* file_desc = (rec_type*)calloc(file_desc_size, sizeof(rec_type));
 
     if (!file_desc) {
+        MY_STACK_Free();
         return error(ERROR__MEMORY_ALLOCATION, __FILE__, __LINE__);
     }
 

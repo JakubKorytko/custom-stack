@@ -1,10 +1,14 @@
 // Copyright: 2023 Jakub Korytko
 
 #include "src/pch_source/stdafx.h"
+#include "src/interface/my_interface.h"
 
 #include "src/stack/my_stack.h"
-#include "src/student/my_student.h"
-#include "src/interface/my_interface.h"
+
+static void stdin_clear() {
+    int ch;
+    while ((ch = getchar()) != '\n' && ch != EOF) continue;
+}
 
 static const char *strtab[] = {
     "0 - push",
@@ -22,6 +26,7 @@ static void push(enum MY_DATA_TYPE type) {
     struct MY_STACK* tmp = (struct MY_STACK*)malloc(sizeof(struct MY_STACK));
 
     if (!tmp) {
+        MY_STACK_Free();
         handle_error(ERROR__MEMORY_ALLOCATION, __FILE__, __LINE__);
         return;
     }
@@ -58,6 +63,7 @@ static void find(enum MY_DATA_TYPE type) {
     struct MY_STACK* tmp = (struct MY_STACK*)malloc(sizeof(struct MY_STACK));
 
     if (!tmp) {
+        MY_STACK_Free();
         handle_error(ERROR__MEMORY_ALLOCATION, __FILE__, __LINE__);
         return;
     }
@@ -80,7 +86,7 @@ static void find(enum MY_DATA_TYPE type) {
 
     if (pDat) {
         found = 1;
-        output(MESSAGE__ELEMENT_FOUND);
+        generic_output(MESSAGE__ELEMENT_FOUND);
         (*tmp->ptr_fun_prnt)(pDat);
     }
 
@@ -89,7 +95,7 @@ static void find(enum MY_DATA_TYPE type) {
 
         if (pDat) {
             found = 1;
-            output(MESSAGE__ELEMENT_FOUND);
+            generic_output(MESSAGE__ELEMENT_FOUND);
             (*tmp->ptr_fun_prnt)(pDat);
         }
     }
@@ -101,7 +107,7 @@ static void find(enum MY_DATA_TYPE type) {
     }
 
     if (!found) {
-        output(MESSAGE__ELEMENT_NOT_FOUND);
+        generic_output(MESSAGE__ELEMENT_NOT_FOUND);
     }
 }
 
@@ -126,23 +132,23 @@ static void clear() {
 }
 
 void menu() {
-    MY_STACK_Init(SetFunctionPointers);
+    MY_STACK_Init(&SetFunctionPointers);
 
     size_t op = 0;
     while (op >= INTERFACE_PUSH && op <= INTERFACE_STOP) {
-        output(MESSAGE__MENU);
+        generic_output(MESSAGE__MENU);
 
         for (size_t it = 0; it < INTERFACE_TOTAL; ++it) {
             printf("%s\n", strtab[it]);
         }
 
-        output(MESSAGE__MENU_INPUT);
+        generic_output(MESSAGE__MENU_INPUT);
 
         scanf_s("%zu", &op);
         stdin_clear();
 
         switch (op) {
-        case INTERFACE_PUSH: push(DATA_TYPE_MY_STUDENT);
+        case INTERFACE_PUSH: push(interace_type);
             break;
         case INTERFACE_POP: pop();
             break;
@@ -150,7 +156,7 @@ void menu() {
             break;
         case INTERFACE_DISPLAY_TOP: displayTop();
             break;
-        case INTERFACE_FIND: find(DATA_TYPE_MY_STUDENT);
+        case INTERFACE_FIND: find(interace_type);
             break;
         case INTERFACE_SAVE: save();
             break;
@@ -161,12 +167,7 @@ void menu() {
         case INTERFACE_STOP: clear();
             return;
         default:
-            output(MESSAGE__UNKNOWN_MENU_OPTION);
+            generic_output(MESSAGE__UNKNOWN_MENU_OPTION);
         }
     }
-}
-
-void stdin_clear() {
-    int ch;
-    while ((ch = getchar()) != '\n' && ch != EOF) continue;
 }

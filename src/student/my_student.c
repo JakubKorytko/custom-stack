@@ -4,9 +4,8 @@
 #include "src/pch_source/stdafx.h"
 #include "src/student/my_student.h"
 
-#include <string.h>
-
-#include "src/interface/my_interface.h"
+// NOLINTNEXTLINE(build/include_order)
+#include <string.h>  // must be included after stdafx.h
 
 #define MAX_SURNAME_SIZE 128
 
@@ -15,9 +14,13 @@ static const char* fieldsOfStudyName[] = {
     "Mathematics",
     "Engineer",
     "Physics",
-    "Chemistry",
-    "FIELDS_OF_STUDY_TOTAL"
+    "Chemistry"
 };
+
+static void stdin_clear() {
+    int ch;
+    while ((ch = getchar()) != '\n' && ch != EOF) continue;
+}
 
 static char* readSurname() {
     // function that shortens allocated memory to the maximum length needed
@@ -144,8 +147,11 @@ void* MY_STUDENT_Push() {
 void MY_STUDENT_Print(void* ptr) {
     struct MY_STUDENT* p = (struct MY_STUDENT*)ptr;
     if (p) {
-        foutput(MESSAGE__STUDENT_PRINT, p->student_surname, p->birth_year,
-            fieldsOfStudyName[p->field_of_study], p->field_of_study);
+        printf_s(
+            custom_messages[MESSAGE__STUDENT_PRINT],
+            p->student_surname, p->birth_year,
+            fieldsOfStudyName[p->field_of_study],
+            p->field_of_study);
     }
 }
 
@@ -307,7 +313,7 @@ void* MY_STUDENT_Input() {
 
     output(MESSAGE__STUDY_FIELD_LIST);
 
-    for (int i = 0; fieldsOfStudyName[i] != "FIELDS_OF_STUDY_TOTAL"; i++) {
+    for (int i = 0; i < FIELDS_OF_STUDY_TOTAL; i++) {
         printf("\n%s - %d", fieldsOfStudyName[i], i);
     }
 

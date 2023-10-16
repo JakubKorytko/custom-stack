@@ -37,18 +37,7 @@ typedef void* (*Push)();
 // a function with a prototype MY_DATA_TYPE Function();
 typedef enum MY_DATA_TYPE(*GetObjectTyp)();
 
-typedef void (*GetFuncPtr)(
-    enum MY_DATA_TYPE typ,
-    PrintObject* pfunprint,
-    FreeObject* pfunfree,
-    Push* ptr_fun_push,
-    IO_Object* pfunsave,
-    IO_Object* pfunread,
-    CompData* ptr_fun_comp,
-    SearchData* fun_search_data,
-    FreeSearchData* fun_free_search_data,
-    GetObjectTyp* pfungettyp
-);
+typedef void (*GetFuncPtr)(struct MY_STACK* element, enum MY_DATA_TYPE type);
 
 void SetFunctionPointers(struct MY_STACK* element, enum MY_DATA_TYPE type);
 

@@ -26,7 +26,7 @@ static struct ExecResult MY_STACK_Read__Read_file_length(
 
 static struct ExecResult MY_STACK_Read__Allocate_memory(
     rec_type** file_desc, unsigned int length) {
-    *file_desc = (rec_type*)malloc((size_t)(length + 1) * sizeof(rec_type));
+    *file_desc = (rec_type*)malloc(((size_t)length + 1) * sizeof(rec_type));
 
     if (!*file_desc) {
         return error(ERROR__MEMORY_ALLOCATION, __FILE__, __LINE__);
@@ -112,9 +112,9 @@ static struct ExecResult MY_STACK_Read__Process_data(
             tmp->typ = type;
 
             MY_STACK_Push(tmp);
-            output(MESSAGE__STACK_ELEMENT_LOADED);
+            generic_output(MESSAGE__STACK_ELEMENT_LOADED);
             (*tmp->ptr_fun_prnt)(pData);
-            output(MESSAGE__NEWLINE);
+            generic_output(MESSAGE__NEWLINE);
         }
     }
 

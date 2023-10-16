@@ -3,9 +3,6 @@
 #ifndef SRC_STACK_MY_STACK_H_
 #define SRC_STACK_MY_STACK_H_
 
-#include "src/stack/data_types.h"
-#include "src/stack/function_pointers.h"
-
 void MY_STACK_Init(GetFuncPtr ptr);
 void MY_STACK_Free();
 struct MY_STACK* MY_STACK_Push(struct MY_STACK* pdat);
@@ -16,7 +13,6 @@ void* MY_STACK_Search(void* pSearchDat, CompData ptr_comp_fun, int FirstEntry);
 void MY_STACK_SetFuncPointers(GetFuncPtr ptr);
 void MY_STACK_Save();
 void MY_STACK_Read();
-
 
 struct MY_STACK* MY_STACK_GetTopElement();
 size_t MY_STACK_GetStackLength();

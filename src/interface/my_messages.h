@@ -3,13 +3,10 @@
 #ifndef SRC_INTERFACE_MY_MESSAGES_H_
 #define SRC_INTERFACE_MY_MESSAGES_H_
 
-enum CUSTOM_MESSAGES {
+typedef enum CUSTOM_MESSAGES CUSTOM_MESSAGES;
+
+enum GENERIC_MESSAGES {
     MESSAGE__UNKNOWN_MENU_OPTION,
-    MESSAGE__SURNAME_INPUT,
-    MESSAGE__STUDY_FIELD_LIST,
-    MESSAGE__BIRTHDAY_INPUT,
-    MESSAGE__STUDY_FIELD_INPUT,
-    MESSAGE__STUDENT_PRINT,
     MESSAGE__STACK_EMPTY,
     MESSAGE__STACK_ELEMENT_LOADED,
     MESSAGE__NEWLINE,
@@ -19,11 +16,14 @@ enum CUSTOM_MESSAGES {
     MESSAGE__MENU_INPUT,
     // (...)
 
-    MESSAGE__TOTAL
+    GENERIC_MESSAGES__TOTAL
     // MARKS THE END OF AN ENUM, ALWAYS AT THE END
 };
 
+void generic_output(enum GENERIC_MESSAGES message);
 void output(enum CUSTOM_MESSAGES message);
-void foutput(enum CUSTOM_MESSAGES message, ...);
+
+extern const char* generic_messages[];
+extern const char* custom_messages[];
 
 #endif  // SRC_INTERFACE_MY_MESSAGES_H_

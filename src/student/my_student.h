@@ -4,7 +4,6 @@
 #define SRC_STUDENT_MY_STUDENT_H_
 
 #include <stdio.h>
-#include "src/stack/my_stack.h"
 
 enum FIELDS_OF_STUDY {
     Computer_Science,
