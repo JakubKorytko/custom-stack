@@ -28,7 +28,7 @@ static struct ExecResult MY_STACK_Save__Write_no_items(
 
 static struct ExecResult MY_STACK_Save__Write_data_type(
     FILE* file, const struct MY_STACK* element) {
-    if (fwrite(&element->typ, sizeof(enum MY_DATA_TYPE), 1, file) != 1) {
+    if (fwrite(&element->type, sizeof(enum MY_DATA_TYPE), 1, file) != 1) {
         return error(ERROR__FILE_WRITE, __FILE__, __LINE__);
     }
     return success();

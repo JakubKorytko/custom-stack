@@ -15,31 +15,31 @@ static void SetFunctionPointers__From_array(
     }
 
     (*element).ptr_fun_push = MY_DATA_POINTERS_ARRAY[type]
-    ->ptr_fun_push;
+    ->fun_push;
 
     (*element).ptr_fun_prnt = MY_DATA_POINTERS_ARRAY[type]
-    ->pfunprint;
+    ->fun_print;
 
     (*element).ptr_fun_free = MY_DATA_POINTERS_ARRAY[type]
-    ->pfunfree;
+    ->fun_free;
 
     (*element).ptr_fun_save = MY_DATA_POINTERS_ARRAY[type]
-    ->pfunsave;
+    ->fun_save;
 
     (*element).ptr_fun_read = MY_DATA_POINTERS_ARRAY[type]
-    ->pfunread;
+    ->fun_read;
 
     (*element).ptr_fun_comp = MY_DATA_POINTERS_ARRAY[type]
-    ->ptr_fun_comp;
+    ->fun_comp;
 
-    (*element).fun_search_data = MY_DATA_POINTERS_ARRAY[type]
+    (*element).ptr_fun_search_data = MY_DATA_POINTERS_ARRAY[type]
     ->fun_search_data;
 
-    (*element).fun_free_search_data = MY_DATA_POINTERS_ARRAY[type]
+    (*element).ptr_fun_free_search_data = MY_DATA_POINTERS_ARRAY[type]
     ->fun_free_search_data;
 
     (*element).ptr_fun_get_type = MY_DATA_POINTERS_ARRAY[type]
-    ->pfungettyp;
+    ->fun_get_type;
 }
 
 void SetFunctionPointers(struct MY_STACK* element, enum MY_DATA_TYPE type) {
@@ -49,8 +49,8 @@ void SetFunctionPointers(struct MY_STACK* element, enum MY_DATA_TYPE type) {
     (*element).ptr_fun_save = NULL;
     (*element).ptr_fun_read = NULL;
     (*element).ptr_fun_comp = NULL;
-    (*element).fun_search_data = NULL;
-    (*element).fun_free_search_data = NULL;
+    (*element).ptr_fun_search_data = NULL;
+    (*element).ptr_fun_free_search_data = NULL;
     (*element).ptr_fun_get_type = NULL;
 
     SetFunctionPointers__From_array(element, type);

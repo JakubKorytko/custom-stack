@@ -3,7 +3,6 @@
 
 #ifndef SRC_INTERFACE_ERRORS_HANDLER_H_
 #define SRC_INTERFACE_ERRORS_HANDLER_H_
-#include <stdlib.h>
 
 enum ErrorCode {
     ERROR__NONE,

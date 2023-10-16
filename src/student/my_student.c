@@ -36,11 +36,6 @@ static char* readSurname() {
         }
 
         fgets(buff, MAX_SURNAME_SIZE, stdin);
-        // unfortunately I am not able to use the gets function
-        // because of the version I am using to create the project
-        // since the C11 version "gets" been permanently removed
-        // from the stdio.h library
-        // https://en.wikipedia.org/wiki/C11_(C_standard_revision)
 
         buff_len = strlen(buff);
 
@@ -88,7 +83,7 @@ static char* readSurname() {
     return surname;
 }
 
-void *MY_STUDENT_Init(char * surname, int rok,
+void *MY_STUDENT_Init(char * surname, int year,
 enum FIELDS_OF_STUDY field_of_study) {
     struct MY_STUDENT* pdata;
     pdata = (struct MY_STUDENT*)malloc(sizeof(struct MY_STUDENT));
@@ -106,7 +101,7 @@ enum FIELDS_OF_STUDY field_of_study) {
             pdata->student_surname = NULL;
         }
         pdata->field_of_study = field_of_study;
-        pdata->birth_year = rok;
+        pdata->birth_year = year;
 
         if (surname) {
             free(surname);

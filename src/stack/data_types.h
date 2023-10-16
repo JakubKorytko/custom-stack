@@ -9,7 +9,7 @@ struct MY_STACK {
     void* pData;
 
     // data type
-    enum MY_DATA_TYPE typ;
+    enum MY_DATA_TYPE type;
 
     // pointer to a function
     // that prints a data object
@@ -37,11 +37,11 @@ struct MY_STACK {
 
     // pointer to a function from the data handler
     // that prepares an object for comparison
-    SearchData  fun_search_data;
+    SearchData  ptr_fun_search_data;
 
     // pointer to the function from the data handler
     // that frees the comparison object
-    FreeSearchData fun_free_search_data;
+    FreeSearchData ptr_fun_free_search_data;
 
     // pointer to a function from the data handler
     // that returns the object type
@@ -51,16 +51,16 @@ struct MY_STACK {
 };
 
 struct MY_DATA_POINTERS {
-    enum MY_DATA_TYPE typ;
-    PrintObject pfunprint;
-    FreeObject pfunfree;
-    Push ptr_fun_push;
-    IO_Object pfunsave;
-    IO_Object pfunread;
-    CompData ptr_fun_comp;
+    enum MY_DATA_TYPE type;
+    PrintObject fun_print;
+    FreeObject fun_free;
+    Push fun_push;
+    IO_Object fun_save;
+    IO_Object fun_read;
+    CompData fun_comp;
     SearchData fun_search_data;
     FreeSearchData fun_free_search_data;
-    GetObjectTyp pfungettyp;
+    GetObjectTyp fun_get_type;
 };
 
 enum MY_DATA_TYPE {

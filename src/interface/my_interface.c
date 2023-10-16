@@ -10,7 +10,7 @@ static void stdin_clear() {
     while ((ch = getchar()) != '\n' && ch != EOF) continue;
 }
 
-static const char *strtab[] = {
+static const char *menu_options[] = {
     "0 - push",
     "1 - pop",
     "2 - print stack",
@@ -33,7 +33,7 @@ static void push(enum MY_DATA_TYPE type) {
 
     SetFunctionPointers(tmp, type);
 
-    tmp->typ = type;
+    tmp->type = type;
 
     if (!tmp->ptr_fun_push) {
         if (tmp) {
@@ -70,7 +70,7 @@ static void find(enum MY_DATA_TYPE type) {
 
     SetFunctionPointers(tmp, type);
 
-    if (!*tmp->fun_free_search_data) {
+    if (!*tmp->ptr_fun_free_search_data) {
         if (tmp) {
             free(tmp);
         }
@@ -79,7 +79,7 @@ static void find(enum MY_DATA_TYPE type) {
         return;
     }
 
-    void* searchDat = (*tmp->fun_search_data)();
+    void* searchDat = (*tmp->ptr_fun_search_data)();
 
     // make a first search
     void* pDat = MY_STACK_Search(searchDat, (*tmp->ptr_fun_comp), 1);
@@ -100,7 +100,7 @@ static void find(enum MY_DATA_TYPE type) {
         }
     }
 
-    (*tmp->fun_free_search_data)(searchDat);
+    (*tmp->ptr_fun_free_search_data)(searchDat);
 
     if (tmp) {
         free(tmp);
@@ -134,20 +134,20 @@ static void clear() {
 void menu() {
     MY_STACK_Init(&SetFunctionPointers);
 
-    size_t op = 0;
-    while (op >= INTERFACE_PUSH && op <= INTERFACE_STOP) {
+    size_t option = 0;
+    while (option >= INTERFACE_PUSH && option <= INTERFACE_STOP) {
         generic_output(MESSAGE__MENU);
 
         for (size_t it = 0; it < INTERFACE_TOTAL; ++it) {
-            printf("%s\n", strtab[it]);
+            printf("%s\n", menu_options[it]);
         }
 
         generic_output(MESSAGE__MENU_INPUT);
 
-        scanf_s("%zu", &op);
+        scanf_s("%zu", &option);
         stdin_clear();
 
-        switch (op) {
+        switch (option) {
         case INTERFACE_PUSH: push(interace_type);
             break;
         case INTERFACE_POP: pop();

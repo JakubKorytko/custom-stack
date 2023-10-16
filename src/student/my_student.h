@@ -3,8 +3,6 @@
 #ifndef SRC_STUDENT_MY_STUDENT_H_
 #define SRC_STUDENT_MY_STUDENT_H_
 
-#include <stdio.h>
-
 enum FIELDS_OF_STUDY {
     Computer_Science,
     Mathematics,
@@ -12,7 +10,9 @@ enum FIELDS_OF_STUDY {
     Physics,
     Chemistry,
     // (...)
-    FIELDS_OF_STUDY_TOTAL  // MARKS THE END OF AN ENUM, ALWAYS AT THE END
+
+    FIELDS_OF_STUDY_TOTAL
+    // MARKS THE END OF AN ENUM, ALWAYS AT THE END
 };
 
 struct MY_STUDENT {
@@ -21,7 +21,7 @@ struct MY_STUDENT {
     enum FIELDS_OF_STUDY field_of_study;
 };
 
-void* MY_STUDENT_Init(char* surname, int rok,
+void* MY_STUDENT_Init(char* surname, int year,
 enum FIELDS_OF_STUDY field_of_study);
 
 void MY_STUDENT_Free(void* ptr);

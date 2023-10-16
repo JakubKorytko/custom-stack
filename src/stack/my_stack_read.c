@@ -109,7 +109,7 @@ static struct ExecResult MY_STACK_Read__Process_data(
 
         if ((*tmp->ptr_fun_read)(&pData, file) != 0) {
             tmp->pData = pData;
-            tmp->typ = type;
+            tmp->type = type;
 
             MY_STACK_Push(tmp);
             generic_output(MESSAGE__STACK_ELEMENT_LOADED);

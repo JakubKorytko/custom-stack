@@ -37,6 +37,9 @@
     <Filter Include="Interface\Messages">
       <UniqueIdentifier>{2964d29b-649f-42e5-ac7f-54a9958dad68}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Stack\Function pointers">
+      <UniqueIdentifier>{efff3ae7-1622-45b8-967e-6ac5a2c0b52f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\interface\errors_handler.h">
@@ -57,14 +60,14 @@
     <ClInclude Include="..\src\student\my_student.h">
       <Filter>Student</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\stack\function_pointers.h">
-      <Filter>Stack\Data types</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\stack\data_types.h">
       <Filter>Stack\Data types</Filter>
     </ClInclude>
     <ClInclude Include="..\src\stack\my_stack.h">
       <Filter>Stack\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\stack\function_pointers.h">
+      <Filter>Stack\Function pointers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -92,14 +95,14 @@
     <ClCompile Include="..\src\stack\my_stack_save.c">
       <Filter>Stack\Save &amp; Read</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\stack\function_pointers.c">
-      <Filter>Stack\Data types</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\stack\my_stack.c">
       <Filter>Stack\Main</Filter>
     </ClCompile>
     <ClCompile Include="..\src\stack\data_types.c">
       <Filter>Stack\Data types</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\stack\function_pointers.c">
+      <Filter>Stack\Function pointers</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
