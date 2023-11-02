@@ -1,9 +1,9 @@
 // Copyright: 2023 Jakub Korytko
 
-#include "src/pch_source/stdafx.h"
-#include "src/data_type_handlers/data_types.h"
+#include "pch_source/stdafx.h"
+#include "data_type_handlers/data_types.h"
 
-#include "src/student/my_student.h"
+#include "student/my_student.h"
 
 struct MY_DATA_POINTERS MY_STUDENT__POINTERS = {
     .type = DATA_TYPE_MY_STUDENT,

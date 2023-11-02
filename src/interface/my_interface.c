@@ -1,9 +1,9 @@
 // Copyright: 2023 Jakub Korytko
 
-#include "src/pch_source/stdafx.h"
-#include "src/interface/my_interface.h"
+#include "pch_source/stdafx.h"
+#include "interface/my_interface.h"
 
-#include "src/stack/my_stack.h"
+#include "stack/my_stack.h"
 
 static void stdin_clear() {
     int ch;

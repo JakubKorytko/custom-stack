@@ -1,7 +1,7 @@
 // Copyright: 2023 Jakub Korytko
 
-#include "src/pch_source/stdafx.h"
-#include "src/stack/my_stack.h"
+#include "pch_source/stdafx.h"
+#include "stack/my_stack.h"
 
 const char STACK_DATA_FILENAME[] = "stack_data.bin";
 const char FILE_WRITE_MODE[] = "wb";

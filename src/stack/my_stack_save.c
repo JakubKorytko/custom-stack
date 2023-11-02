@@ -1,9 +1,9 @@
 // Copyright: 2023 Jakub Korytko
 // LINT_C_FILE
 
-#include "src/pch_source/stdafx.h"
+#include "pch_source/stdafx.h"
 
-#include "src/stack/my_stack.h"
+#include "stack/my_stack.h"
 
 static struct ExecResult MY_STACK_Save__Open_file(FILE** file) {
     fopen_s(file, STACK_DATA_FILENAME, FILE_WRITE_MODE);

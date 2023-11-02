@@ -1,7 +1,7 @@
 // Copyright: 2023 Jakub Korytko
 
-#include "src/pch_source/stdafx.h"
-#include "src/feedback_handlers/my_messages.h"
+#include "pch_source/stdafx.h"
+#include "feedback_handlers/my_messages.h"
 
 const char* generic_messages[] = {
     "Unknown operation code\n",

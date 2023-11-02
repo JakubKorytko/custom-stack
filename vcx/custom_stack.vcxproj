@@ -38,9 +38,12 @@
     <ClCompile Include="..\src\interface\my_interface.c" />
     <ClCompile Include="..\src\pch_source\stdafx.c">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">pch_source/stdafx.h</PrecompiledHeaderFile>
     </ClCompile>
     <ClCompile Include="..\src\stack\my_stack.c" />
-    <ClCompile Include="..\src\stack\my_stack_read.c" />
+    <ClCompile Include="..\src\stack\my_stack_read.c">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">pch_source/stdafx.h</PrecompiledHeaderFile>
+    </ClCompile>
     <ClCompile Include="..\src\stack\my_stack_save.c" />
     <ClCompile Include="..\src\student\my_student.c" />
   </ItemGroup>
@@ -131,9 +134,9 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)src</AdditionalIncludeDirectories>
       <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>src/pch_source/stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile>pch_source/stdafx.h</PrecompiledHeaderFile>
       <CompileAs>CompileAsC</CompileAs>
     </ClCompile>
     <Link>

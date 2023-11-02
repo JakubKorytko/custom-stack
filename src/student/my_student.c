@@ -1,8 +1,8 @@
 // Copyright: 2023 Jakub Korytko
 // LINT_C_FILE
 
-#include "src/pch_source/stdafx.h"
-#include "src/student/my_student.h"
+#include "pch_source/stdafx.h"
+#include "student/my_student.h"
 
 // NOLINTNEXTLINE(build/include_order)
 #include <string.h>  // must be included after stdafx.h

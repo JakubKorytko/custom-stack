@@ -1,7 +1,7 @@
 // Copyright: 2023 Jakub Korytko
 
-#include "src/pch_source/stdafx.h"
-#include "src/data_type_handlers/function_pointers.h"
+#include "pch_source/stdafx.h"
+#include "data_type_handlers/function_pointers.h"
 
 static void SetFunctionPointers__From_array(
     struct MY_STACK* element, enum MY_DATA_TYPE type) {
