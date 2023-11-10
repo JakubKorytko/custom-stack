@@ -1,6 +1,7 @@
 // Copyright: 2023 Jakub Korytko
 
 #include "pch_source/stdafx.h"
+
 #include "data_type_handlers/data_types.h"
 
 #include "student/my_student.h"
@@ -15,12 +16,11 @@ struct MY_DATA_POINTERS MY_STUDENT__POINTERS = {
     .fun_comp = MY_STUDENT_Compare,
     .fun_search_data = MY_STUDENT_SearchData,
     .fun_free_search_data = MY_STUDENT_SearchData_Free,
-    .fun_get_type = MY_STUDENT_GetType
-};
+    .fun_get_type = MY_STUDENT_GetType};
 
 // add more (DATA_TYPE)__POINTERS here
 
-const struct MY_DATA_POINTERS* MY_DATA_POINTERS_ARRAY[1] = {
+const struct MY_DATA_POINTERS *MY_DATA_POINTERS_ARRAY[1] = {
     &MY_STUDENT__POINTERS,
     // include (DATA_TYPE)__POINTERS here (remember about the &)
     //
@@ -28,11 +28,10 @@ const struct MY_DATA_POINTERS* MY_DATA_POINTERS_ARRAY[1] = {
     // here but also in the data_types.h file
 };
 
-const char* custom_messages[] = {
+const char *custom_messages[] = {
     /* MY_STUDENT__MESSAGES */
 
-     "Enter student name: ",
-    "\nList of fields of study:\n",
+    "Enter student name: ", "\nList of fields of study:\n",
     "Enter year of birth of student: ",
     "\n\nSelect a field of study from the list above: ",
 

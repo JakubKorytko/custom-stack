@@ -5,20 +5,21 @@
 
 // To make the types in this header recognized by the IDE
 #include <stdio.h>
+
 #include "data_type_handlers/function_pointers.h"
 
 void MY_STACK_Init(GetFuncPtr ptr);
 void MY_STACK_Free();
-struct MY_STACK* MY_STACK_Push(struct MY_STACK* pdat);
+struct MY_STACK *MY_STACK_Push(struct MY_STACK *pdat);
 struct MY_STACK MY_STACK_Pop();
 void MY_STACK_Display();
 void MY_STACK_Display_Top();
-void* MY_STACK_Search(void* pSearchDat, CompData ptr_comp_fun, int FirstEntry);
+void *MY_STACK_Search(void *pSearchDat, CompData ptr_comp_fun, int FirstEntry);
 void MY_STACK_SetFuncPointers(GetFuncPtr ptr);
 void MY_STACK_Save();
 void MY_STACK_Read();
 
-struct MY_STACK* MY_STACK_GetTopElement();
+struct MY_STACK *MY_STACK_GetTopElement();
 size_t MY_STACK_GetStackLength();
 
 // the size of reserved memory
