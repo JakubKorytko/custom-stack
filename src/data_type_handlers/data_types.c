@@ -4,6 +4,7 @@
 
 #include "data_type_handlers/data_types.h"
 
+#include "student/custom_messages.h"
 #include "student/my_student.h"
 
 struct MY_DATA_POINTERS MY_STUDENT__POINTERS = {
@@ -16,40 +17,10 @@ struct MY_DATA_POINTERS MY_STUDENT__POINTERS = {
     .fun_comp = MY_STUDENT_Compare,
     .fun_search_data = MY_STUDENT_SearchData,
     .fun_free_search_data = MY_STUDENT_SearchData_Free,
-    .fun_get_type = MY_STUDENT_GetType};
+    .fun_get_type = MY_STUDENT_GetType
+};
 
 // add more (DATA_TYPE)__POINTERS here
 
-const struct MY_DATA_POINTERS *MY_DATA_POINTERS_ARRAY[1] = {
-    &MY_STUDENT__POINTERS,
-    // include (DATA_TYPE)__POINTERS here (remember about the &)
-    //
-    // and change the size of MY_DATA_POINTERS_ARRAY
-    // here but also in the data_types.h file
-};
-
-const char *custom_messages[] = {
-    /* MY_STUDENT__MESSAGES */
-
-    "Enter student name: ", "\nList of fields of study:\n",
-    "Enter year of birth of student: ",
-    "\n\nSelect a field of study from the list above: ",
-
-    // notice the lack of commas between the strings
-    // this is because its only one string,
-    // but split into multiple lines
-    "\n"
-    "--- STUDENT ---\n"
-    "Student's name: %s\n"
-    "Year of birth: %u\n"
-    "Field of study: %s (%d)\n"
-    "---"
-    "\n",
-
-    /* (DATA_TYPE)__MESSAGES */
-
-    // (...)
-};
-
 // set type that interface should handle
-const enum MY_DATA_TYPE interace_type = DATA_TYPE_MY_STUDENT;
+const enum MY_DATA_TYPE interface_type = DATA_TYPE_MY_STUDENT;
