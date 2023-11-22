@@ -19,6 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\config\general_config.h" />
+    <ClInclude Include="..\config\student_config.h" />
+    <ClInclude Include="..\data\student\my_student.h" />
+    <ClInclude Include="..\data\student\my_student_input.h" />
     <ClInclude Include="..\src\data_type_handlers\data_types.h" />
     <ClInclude Include="..\src\data_type_handlers\function_pointers.h" />
     <ClInclude Include="..\src\feedback_handlers\errors_handler.h" />
@@ -27,11 +31,13 @@
     <ClInclude Include="..\src\pch_source\stdafx.h" />
     <ClInclude Include="..\src\pch_source\targetver.h" />
     <ClInclude Include="..\src\stack\my_stack.h" />
-    <ClInclude Include="..\src\student\my_student.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\config\general_config.c" />
+    <ClCompile Include="..\config\student_config.c" />
+    <ClCompile Include="..\data\student\my_student.c" />
+    <ClCompile Include="..\data\student\my_student_input.c" />
     <ClCompile Include="..\main.c" />
-    <ClCompile Include="..\src\data_type_handlers\data_types.c" />
     <ClCompile Include="..\src\data_type_handlers\function_pointers.c" />
     <ClCompile Include="..\src\feedback_handlers\errors_handler.c" />
     <ClCompile Include="..\src\feedback_handlers\my_messages.c" />
@@ -45,7 +51,9 @@
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">pch_source/stdafx.h</PrecompiledHeaderFile>
     </ClCompile>
     <ClCompile Include="..\src\stack\my_stack_save.c" />
-    <ClCompile Include="..\src\student\my_student.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -138,7 +146,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)src;$(SolutionDir)data;$(SolutionDir)config</AdditionalIncludeDirectories>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch_source/stdafx.h</PrecompiledHeaderFile>
       <CompileAs>CompileAsC</CompileAs>

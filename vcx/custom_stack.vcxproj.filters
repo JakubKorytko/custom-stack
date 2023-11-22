@@ -1,111 +1,147 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Interface">
-      <UniqueIdentifier>{cd605c7f-73e3-41f8-88d3-7c9dd9ef22f1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Student">
-      <UniqueIdentifier>{c5f125f4-6171-4eff-96c0-469d47201ac1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="PCH Source">
-      <UniqueIdentifier>{c335d726-898a-4e1f-a3a5-9d225bc5b712}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Stack">
-      <UniqueIdentifier>{cebf2625-b41e-43a2-837c-6f819ac5a62f}</UniqueIdentifier>
+      <UniqueIdentifier>{ca5e545b-fe67-4e7c-bfa3-dbb0132fbc3a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="PCH Source\Stdafx">
-      <UniqueIdentifier>{26a2b4f7-6584-4080-bac6-5a8d914ed13f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Entry point">
-      <UniqueIdentifier>{844ccba1-3be0-4368-af2c-f93e40e62ce3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Stack\Save &amp; Read">
-      <UniqueIdentifier>{61e7399d-8fc2-4390-8d47-836569101127}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Stack\Main">
-      <UniqueIdentifier>{1b4d61f5-62ba-4666-93da-5ad2c11a12f9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Data type handlers">
+    <Filter Include="Stack\Data type handlers">
       <UniqueIdentifier>{cb1a2d2c-c2ae-444d-b607-f827795e23d0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Feedback handlers">
-      <UniqueIdentifier>{09993464-ec8d-463d-b81b-192caacb3e80}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Data type handlers\Function pointers">
+    <Filter Include="Stack\Data type handlers\Function pointers">
       <UniqueIdentifier>{efff3ae7-1622-45b8-967e-6ac5a2c0b52f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Data type handlers\Data types">
+    <Filter Include="Stack\Data type handlers\Data types">
       <UniqueIdentifier>{cda2e7a9-0c7c-4498-88cc-39e0aaf31223}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Feedback handlers\Errors handler">
+    <Filter Include="Stack\Entry point">
+      <UniqueIdentifier>{844ccba1-3be0-4368-af2c-f93e40e62ce3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stack\Feedback handlers">
+      <UniqueIdentifier>{09993464-ec8d-463d-b81b-192caacb3e80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stack\Feedback handlers\Errors handler">
       <UniqueIdentifier>{93d0c1fa-f7a6-4bff-9ae2-c413162a5abe}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Feedback handlers\Messages handler">
+    <Filter Include="Stack\Feedback handlers\Messages handler">
       <UniqueIdentifier>{2964d29b-649f-42e5-ac7f-54a9958dad68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stack\Interface">
+      <UniqueIdentifier>{cd605c7f-73e3-41f8-88d3-7c9dd9ef22f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stack\PCH Source">
+      <UniqueIdentifier>{c335d726-898a-4e1f-a3a5-9d225bc5b712}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stack\PCH Source\Stdafx">
+      <UniqueIdentifier>{26a2b4f7-6584-4080-bac6-5a8d914ed13f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stack\Core">
+      <UniqueIdentifier>{cebf2625-b41e-43a2-837c-6f819ac5a62f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stack\Core\Save &amp; Read">
+      <UniqueIdentifier>{61e7399d-8fc2-4390-8d47-836569101127}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stack\Core\Main">
+      <UniqueIdentifier>{1b4d61f5-62ba-4666-93da-5ad2c11a12f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data">
+      <UniqueIdentifier>{f4f35788-864c-44ef-9166-7bc28961c766}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data\Student">
+      <UniqueIdentifier>{c5f125f4-6171-4eff-96c0-469d47201ac1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Config">
+      <UniqueIdentifier>{eb4496c4-399d-4b8e-bfdf-80fdb6d1bb18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Config\General">
+      <UniqueIdentifier>{197fae27-7fe1-401f-8f14-60ebfabf5a48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Config\Student">
+      <UniqueIdentifier>{11312a1d-983d-48c9-9a45-be6c3fde1103}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data\Student\Input">
+      <UniqueIdentifier>{519d15fb-826f-472f-a632-94ba736db7b1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\pch_source\stdafx.h">
-      <Filter>PCH Source\Stdafx</Filter>
+      <Filter>Stack\PCH Source\Stdafx</Filter>
     </ClInclude>
     <ClInclude Include="..\src\pch_source\targetver.h">
-      <Filter>PCH Source</Filter>
+      <Filter>Stack\PCH Source</Filter>
     </ClInclude>
     <ClInclude Include="..\src\stack\my_stack.h">
-      <Filter>Stack\Main</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\student\my_student.h">
-      <Filter>Student</Filter>
+      <Filter>Stack\Core\Main</Filter>
     </ClInclude>
     <ClInclude Include="..\src\data_type_handlers\function_pointers.h">
-      <Filter>Data type handlers\Function pointers</Filter>
+      <Filter>Stack\Data type handlers\Function pointers</Filter>
     </ClInclude>
     <ClInclude Include="..\src\data_type_handlers\data_types.h">
-      <Filter>Data type handlers\Data types</Filter>
+      <Filter>Stack\Data type handlers\Data types</Filter>
     </ClInclude>
     <ClInclude Include="..\src\feedback_handlers\errors_handler.h">
-      <Filter>Feedback handlers\Errors handler</Filter>
+      <Filter>Stack\Feedback handlers\Errors handler</Filter>
     </ClInclude>
     <ClInclude Include="..\src\feedback_handlers\my_messages.h">
-      <Filter>Feedback handlers\Messages handler</Filter>
+      <Filter>Stack\Feedback handlers\Messages handler</Filter>
     </ClInclude>
     <ClInclude Include="..\src\interface\my_interface.h">
-      <Filter>Interface</Filter>
+      <Filter>Stack\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\data\student\my_student.h">
+      <Filter>Data\Student</Filter>
+    </ClInclude>
+    <ClInclude Include="..\config\general_config.h">
+      <Filter>Config\General</Filter>
+    </ClInclude>
+    <ClInclude Include="..\config\student_config.h">
+      <Filter>Config\Student</Filter>
+    </ClInclude>
+    <ClInclude Include="..\data\student\my_student_input.h">
+      <Filter>Data\Student\Input</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\main.c">
-      <Filter>Entry point</Filter>
+      <Filter>Stack\Entry point</Filter>
     </ClCompile>
     <ClCompile Include="..\src\pch_source\stdafx.c">
-      <Filter>PCH Source\Stdafx</Filter>
+      <Filter>Stack\PCH Source\Stdafx</Filter>
     </ClCompile>
     <ClCompile Include="..\src\stack\my_stack_read.c">
-      <Filter>Stack\Save &amp; Read</Filter>
+      <Filter>Stack\Core\Save &amp; Read</Filter>
     </ClCompile>
     <ClCompile Include="..\src\stack\my_stack_save.c">
-      <Filter>Stack\Save &amp; Read</Filter>
+      <Filter>Stack\Core\Save &amp; Read</Filter>
     </ClCompile>
     <ClCompile Include="..\src\stack\my_stack.c">
-      <Filter>Stack\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\student\my_student.c">
-      <Filter>Student</Filter>
+      <Filter>Stack\Core\Main</Filter>
     </ClCompile>
     <ClCompile Include="..\src\data_type_handlers\function_pointers.c">
-      <Filter>Data type handlers\Function pointers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\data_type_handlers\data_types.c">
-      <Filter>Data type handlers\Data types</Filter>
+      <Filter>Stack\Data type handlers\Function pointers</Filter>
     </ClCompile>
     <ClCompile Include="..\src\feedback_handlers\errors_handler.c">
-      <Filter>Feedback handlers\Errors handler</Filter>
+      <Filter>Stack\Feedback handlers\Errors handler</Filter>
     </ClCompile>
     <ClCompile Include="..\src\feedback_handlers\my_messages.c">
-      <Filter>Feedback handlers\Messages handler</Filter>
+      <Filter>Stack\Feedback handlers\Messages handler</Filter>
     </ClCompile>
     <ClCompile Include="..\src\interface\my_interface.c">
-      <Filter>Interface</Filter>
+      <Filter>Stack\Interface</Filter>
     </ClCompile>
+    <ClCompile Include="..\data\student\my_student.c">
+      <Filter>Data\Student</Filter>
+    </ClCompile>
+    <ClCompile Include="..\config\general_config.c">
+      <Filter>Config\General</Filter>
+    </ClCompile>
+    <ClCompile Include="..\config\student_config.c">
+      <Filter>Config\Student</Filter>
+    </ClCompile>
+    <ClCompile Include="..\data\student\my_student_input.c">
+      <Filter>Data\Student\Input</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>
