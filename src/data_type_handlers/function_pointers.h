@@ -33,7 +33,7 @@ typedef void *(*Push)();
 
 // Type definition: pointer to
 // a function with a prototype MY_DATA_TYPE Function();
-typedef enum MY_DATA_TYPE (*GetObjectTyp)();
+typedef enum MY_DATA_TYPE (*GetObjectType)();
 
 typedef void (*GetFuncPtr)(struct MY_STACK *element, enum MY_DATA_TYPE type);
 
