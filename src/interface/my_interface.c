@@ -151,7 +151,7 @@ void menu() {
 
     switch (option) {
       case INTERFACE_PUSH:
-        push(interace_type);
+        push(interface_type);
         break;
       case INTERFACE_POP:
         pop();
@@ -163,7 +163,7 @@ void menu() {
         displayTop();
         break;
       case INTERFACE_FIND:
-        find(interace_type);
+        find(interface_type);
         break;
       case INTERFACE_SAVE:
         save();
