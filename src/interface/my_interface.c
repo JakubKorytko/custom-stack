@@ -53,8 +53,11 @@ static void push(enum MY_DATA_TYPE type) {
 
 static void pop() {
   struct MY_STACK tmp = MY_STACK_Pop();
-  (tmp.ptr_fun_prnt)(tmp.pData);
-  (tmp.ptr_fun_free)(tmp.pData);
+
+  if (tmp.pData) {
+    (tmp.ptr_fun_prnt)(tmp.pData);
+    (tmp.ptr_fun_free)(tmp.pData);
+  }
 }
 
 static void find(enum MY_DATA_TYPE type) {
