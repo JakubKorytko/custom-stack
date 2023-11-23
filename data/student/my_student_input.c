@@ -1,4 +1,5 @@
 // Copyright: 2023 Jakub Korytko
+// LINT_C_FILE
 
 #include "pch_source/stdafx.h"
 
