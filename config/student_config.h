@@ -1,3 +1,5 @@
+// Copyright: 2023 Jakub Korytko
+
 #ifndef CONFIG_STUDENT_CONFIG_H_
 #define CONFIG_STUDENT_CONFIG_H_
 
