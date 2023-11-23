@@ -11,15 +11,12 @@ static void stdin_clear() {
   while ((ch = getchar()) != '\n' && ch != EOF) continue;
 }
 
-static const char *menu_options[] = {"0 - push",
-                                     "1 - pop",
-                                     "2 - print stack",
-                                     "3 - print top element",
-                                     "4 - find",
-                                     "5 - save to disk",
-                                     "6 - read from disk",
-                                     "7 - clear",
-                                     "8 - finish"};
+static const char *menu_options[] = {
+    "0 - push",           "1 - pop",
+    "2 - print stack",    "3 - print top element",
+    "4 - find",           "5 - save to disk",
+    "6 - read from disk", "7 - clear",
+    "8 - finish"};
 
 static void push(enum MY_DATA_TYPE type) {
   struct MY_STACK *tmp = (struct MY_STACK *)malloc(sizeof(struct MY_STACK));

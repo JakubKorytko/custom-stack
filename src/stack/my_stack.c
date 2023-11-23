@@ -68,7 +68,7 @@ struct MY_STACK MY_STACK_Pop() {
     stack_length -= 1;
     top = next;
   } else {
-      generic_output(MESSAGE__STACK_EMPTY);
+    generic_output(MESSAGE__STACK_EMPTY);
   }
 
   return rv;

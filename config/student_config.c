@@ -14,5 +14,4 @@ struct MY_DATA_POINTERS MY_STUDENT__POINTERS = {
     .fun_comp = MY_STUDENT_Compare,
     .fun_search_data = MY_STUDENT_SearchData,
     .fun_free_search_data = MY_STUDENT_SearchData_Free,
-    .fun_get_type = MY_STUDENT_GetType
-};
+    .fun_get_type = MY_STUDENT_GetType};

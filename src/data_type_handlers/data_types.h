@@ -4,8 +4,8 @@
 #define SRC_DATA_TYPE_HANDLERS_DATA_TYPES_H_
 
 // To make the types in this header recognized by the IDE
-#include "data_type_handlers/function_pointers.h"
 #include "./general_config.h"
+#include "data_type_handlers/function_pointers.h"
 
 struct MY_STACK {
   void *pData;

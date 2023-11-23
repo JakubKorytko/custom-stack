@@ -6,7 +6,7 @@
 #include <string.h>  // must be included after stdafx.h
 
 const char *fieldsOfStudyName[] = {"Computer Science", "Mathematics",
-                                          "Engineer", "Physics", "Chemistry"};
+                                   "Engineer", "Physics", "Chemistry"};
 
 static void *MY_STUDENT_Init(char *surname, int year,
                              enum FIELDS_OF_STUDY field_of_study) {
