@@ -1,7 +1,7 @@
 // Copyright: 2023 Jakub Korytko
 
-#ifndef STACK_DATA_STUDENT_MY_STUDENT_H_
-#define STACK_DATA_STUDENT_MY_STUDENT_H_
+#ifndef DATA_STUDENT_MY_STUDENT_H_
+#define DATA_STUDENT_MY_STUDENT_H_
 
 // To make the types in this header recognized by the IDE
 #include <stdio.h>
@@ -16,4 +16,4 @@ void *MY_STUDENT_SearchData();
 void MY_STUDENT_SearchData_Free(void *searchDat);
 enum MY_DATA_TYPE MY_STUDENT_GetType();
 
-#endif  // STACK_DATA_STUDENT_MY_STUDENT_H_
+#endif  // DATA_STUDENT_MY_STUDENT_H_

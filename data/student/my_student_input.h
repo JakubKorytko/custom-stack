@@ -1,7 +1,7 @@
 // Copyright: 2023 Jakub Korytko
 
-#ifndef STACK_DATA_STUDENT_MY_STUDENT_INPUT_H_
-#define STACK_DATA_STUDENT_MY_STUDENT_INPUT_H_
+#ifndef DATA_STUDENT_MY_STUDENT_INPUT_H_
+#define DATA_STUDENT_MY_STUDENT_INPUT_H_
 
 #define MAX_SURNAME_SIZE 128
 
@@ -35,4 +35,4 @@ void *MY_STUDENT_Input();
 
 extern const char *fieldsOfStudyName[];
 
-#endif  // STACK_DATA_STUDENT_MY_STUDENT_INPUT_H_
+#endif  // DATA_STUDENT_MY_STUDENT_INPUT_H_

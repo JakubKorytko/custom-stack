@@ -1,7 +1,7 @@
 // Copyright: 2023 Jakub Korytko
 
-#ifndef STACK_DATA_CONFIG_H_
-#define STACK_DATA_CONFIG_H_
+#ifndef CONFIG_GENERAL_CONFIG_H_
+#define CONFIG_GENERAL_CONFIG_H_
 
 #include "./student_config.h"
 
@@ -13,4 +13,4 @@ enum MY_DATA_TYPE {
 
 enum CUSTOM_MESSAGES { STUDENT_CONFIG_CUSTOM_MESSAGES_ENUM };
 
-#endif  // STACK_DATA_CONFIG_H_
+#endif  // CONFIG_GENERAL_CONFIG_H_
