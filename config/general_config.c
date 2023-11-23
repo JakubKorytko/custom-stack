@@ -2,7 +2,7 @@
 
 #include "pch_source/stdafx.h"
 
-#include "./general_config.h"
+#include "config/general_config.h"
 
 #include "./student_config.h"
 #include "student/my_student.h"

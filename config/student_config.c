@@ -1,6 +1,6 @@
 #include "pch_source/stdafx.h"
 
-#include "./student_config.h"
+#include "config/student_config.h"
 
 #include "student/my_student.h"
 
